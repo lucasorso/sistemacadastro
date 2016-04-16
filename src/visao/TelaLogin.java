@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cadastro_de_pacientes;
+package visao;
 
 import javax.swing.JOptionPane;
 
