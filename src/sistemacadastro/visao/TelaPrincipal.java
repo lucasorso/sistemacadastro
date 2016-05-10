@@ -1,4 +1,13 @@
-package visao;
+package sistemacadastro.visao;
+
+import sistemacadastro.arquivos.Arquivo;
+import java.awt.List;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import static java.util.Collections.list;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -27,27 +36,27 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        txtNomeCliente = new javax.swing.JTextField();
+        txtCpfCliente = new javax.swing.JTextField();
+        txtRgCliente = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
+        txtRuaCliente = new javax.swing.JTextField();
+        txtCidadeCliente = new javax.swing.JTextField();
+        txtCepCliente = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
+        checkBoxMasculino = new javax.swing.JCheckBox();
+        checkBoxFeminino = new javax.swing.JCheckBox();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jButtonSair = new javax.swing.JButton();
-        jInternalFrameProcurar = new javax.swing.JInternalFrame();
+        Procurar_JInternalFrame = new javax.swing.JInternalFrame();
         jPanel2 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jTextField7 = new javax.swing.JTextField();
@@ -75,6 +84,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        cadastrar_JInternalFrame.setClosable(true);
+        cadastrar_JInternalFrame.setIconifiable(true);
+        cadastrar_JInternalFrame.setMaximizable(true);
+        cadastrar_JInternalFrame.setResizable(true);
         cadastrar_JInternalFrame.setVisible(false);
 
         jLabel1.setText("Nome:");
@@ -82,6 +95,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel2.setText("CPF:");
 
         jLabel3.setText("RG:");
+
+        txtRgCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtRgClienteActionPerformed(evt);
+            }
+        });
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Endereço"));
 
@@ -91,6 +110,38 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jLabel6.setText("CEP:");
 
+        jComboBox1.addItem("AC");
+        jComboBox1.addItem("AL");
+        jComboBox1.addItem("AM");
+        jComboBox1.addItem("BA");
+        jComboBox1.addItem("CE");
+        jComboBox1.addItem("DF");
+        jComboBox1.addItem("ES");
+        jComboBox1.addItem("GO");
+        jComboBox1.addItem("MA");
+        jComboBox1.addItem("MT");
+        jComboBox1.addItem("MS");
+        jComboBox1.addItem("MG");
+        jComboBox1.addItem("PA");
+        jComboBox1.addItem("PB");
+        jComboBox1.addItem("PR");
+        jComboBox1.addItem("PE");
+        jComboBox1.addItem("PI");
+        jComboBox1.addItem("RJ");
+        jComboBox1.addItem("RN");
+        jComboBox1.addItem("RS");
+        jComboBox1.addItem("RO");
+        jComboBox1.addItem("RR");
+        jComboBox1.addItem("SC");
+        jComboBox1.addItem("SP");
+        jComboBox1.addItem("SE");
+        jComboBox1.addItem("TO");
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
+
         jLabel7.setText("Estado:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -99,24 +150,26 @@ public class TelaPrincipal extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField4))
+                        .addComponent(txtRuaCliente))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField5))
+                        .addComponent(txtCidadeCliente))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6)
                             .addComponent(jLabel7))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(30, Short.MAX_VALUE))
+                            .addComponent(txtCepCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(146, 146, 146)))))
+                .addGap(30, 30, 30))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -124,15 +177,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtRuaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCidadeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCepCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -140,11 +193,19 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
-        jCheckBox1.setText("Masculino");
+        jComboBox1.getAccessibleContext().setAccessibleName("");
+        jComboBox1.getAccessibleContext().setAccessibleDescription("");
 
-        jCheckBox2.setText("Feminino");
+        checkBoxMasculino.setText("Masculino");
+
+        checkBoxFeminino.setText("Feminino");
 
         jButton1.setText("Salvar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Excluir");
 
@@ -154,10 +215,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jLabel8.setText("Data e Hora: *****");
 
-        jButtonSair.setText("sair");
+        jButtonSair.setText("Sair");
         jButtonSair.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButtonSairMouseClicked(evt);
+            }
+        });
+        jButtonSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSairActionPerformed(evt);
             }
         });
 
@@ -171,11 +237,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     .addGroup(cadastrar_JInternalFrameLayout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField2))
+                        .addComponent(txtCpfCliente))
                     .addGroup(cadastrar_JInternalFrameLayout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(cadastrar_JInternalFrameLayout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addGap(23, 23, 23)
@@ -190,16 +256,18 @@ public class TelaPrincipal extends javax.swing.JFrame {
                                     .addComponent(jButton4))
                                 .addGap(38, 38, 38))
                             .addGroup(cadastrar_JInternalFrameLayout.createSequentialGroup()
-                                .addComponent(jCheckBox1)
+                                .addComponent(checkBoxMasculino)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jCheckBox2)
+                                .addComponent(checkBoxFeminino)
                                 .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(jTextField3))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtRgCliente))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 98, Short.MAX_VALUE)
                 .addGroup(cadastrar_JInternalFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonSair, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(jButtonSair, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cadastrar_JInternalFrameLayout.createSequentialGroup()
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(53, 53, 53)))
                 .addGap(22, 22, 22))
         );
         cadastrar_JInternalFrameLayout.setVerticalGroup(
@@ -210,19 +278,19 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     .addGroup(cadastrar_JInternalFrameLayout.createSequentialGroup()
                         .addGroup(cadastrar_JInternalFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(cadastrar_JInternalFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtCpfCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(cadastrar_JInternalFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtRgCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3))
                         .addGap(18, 18, 18)
                         .addGroup(cadastrar_JInternalFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jCheckBox1)
-                            .addComponent(jCheckBox2)))
+                            .addComponent(checkBoxMasculino)
+                            .addComponent(checkBoxFeminino)))
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(cadastrar_JInternalFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(cadastrar_JInternalFrameLayout.createSequentialGroup()
@@ -238,13 +306,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     .addComponent(jButton3)
                     .addComponent(jButton4)
                     .addComponent(jLabel8))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         desktopPane.add(cadastrar_JInternalFrame);
         cadastrar_JInternalFrame.setBounds(50, 70, 570, 290);
 
-        jInternalFrameProcurar.setVisible(false);
+        Procurar_JInternalFrame.setClosable(true);
+        Procurar_JInternalFrame.setIconifiable(true);
+        Procurar_JInternalFrame.setMaximizable(true);
+        Procurar_JInternalFrame.setResizable(true);
+        Procurar_JInternalFrame.setVisible(false);
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Pesquisar"));
 
@@ -372,20 +444,20 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout jInternalFrameProcurarLayout = new javax.swing.GroupLayout(jInternalFrameProcurar.getContentPane());
-        jInternalFrameProcurar.getContentPane().setLayout(jInternalFrameProcurarLayout);
-        jInternalFrameProcurarLayout.setHorizontalGroup(
-            jInternalFrameProcurarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jInternalFrameProcurarLayout.createSequentialGroup()
+        javax.swing.GroupLayout Procurar_JInternalFrameLayout = new javax.swing.GroupLayout(Procurar_JInternalFrame.getContentPane());
+        Procurar_JInternalFrame.getContentPane().setLayout(Procurar_JInternalFrameLayout);
+        Procurar_JInternalFrameLayout.setHorizontalGroup(
+            Procurar_JInternalFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Procurar_JInternalFrameLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jInternalFrameProcurarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(Procurar_JInternalFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
-        jInternalFrameProcurarLayout.setVerticalGroup(
-            jInternalFrameProcurarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jInternalFrameProcurarLayout.createSequentialGroup()
+        Procurar_JInternalFrameLayout.setVerticalGroup(
+            Procurar_JInternalFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Procurar_JInternalFrameLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -393,12 +465,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        desktopPane.add(jInternalFrameProcurar);
-        jInternalFrameProcurar.setBounds(120, 20, 450, 350);
+        desktopPane.add(Procurar_JInternalFrame);
+        Procurar_JInternalFrame.setBounds(120, 20, 450, 350);
 
         Menu.setMnemonic('f');
         Menu.setText("Sistema");
 
+        sair_MenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemacadastro/icones/cancel.png"))); // NOI18N
         sair_MenuItem.setMnemonic('x');
         sair_MenuItem.setText("Sair");
         sair_MenuItem.addActionListener(new java.awt.event.ActionListener() {
@@ -413,6 +486,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         Pacientes.setMnemonic('e');
         Pacientes.setText("Pacientes");
 
+        cadastrar_MenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemacadastro/icones/application_form_add.png"))); // NOI18N
         cadastrar_MenuItem.setMnemonic('t');
         cadastrar_MenuItem.setText("Cadastrar");
         cadastrar_MenuItem.addActionListener(new java.awt.event.ActionListener() {
@@ -422,10 +496,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         Pacientes.add(cadastrar_MenuItem);
 
+        excluir_MenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemacadastro/icones/application_form_delete.png"))); // NOI18N
         excluir_MenuItem.setMnemonic('y');
         excluir_MenuItem.setText("Excluir");
+        excluir_MenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                excluir_MenuItemActionPerformed(evt);
+            }
+        });
         Pacientes.add(excluir_MenuItem);
 
+        procurar_MenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemacadastro/icones/application_form_magnify.png"))); // NOI18N
         procurar_MenuItem.setMnemonic('p');
         procurar_MenuItem.setText("Procurar");
         procurar_MenuItem.addActionListener(new java.awt.event.ActionListener() {
@@ -440,12 +521,24 @@ public class TelaPrincipal extends javax.swing.JFrame {
         Sobre.setMnemonic('h');
         Sobre.setText("Sobre");
 
+        desenvolvedores_MenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemacadastro/icones/application_osx_terminal.png"))); // NOI18N
         desenvolvedores_MenuItem.setMnemonic('c');
         desenvolvedores_MenuItem.setText("Desenvolvedores");
+        desenvolvedores_MenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                desenvolvedores_MenuItemActionPerformed(evt);
+            }
+        });
         Sobre.add(desenvolvedores_MenuItem);
 
+        sobreSistema_MenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemacadastro/icones/computer.png"))); // NOI18N
         sobreSistema_MenuItem.setMnemonic('a');
         sobreSistema_MenuItem.setText("Sobre o Sistema");
+        sobreSistema_MenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sobreSistema_MenuItemActionPerformed(evt);
+            }
+        });
         Sobre.add(sobreSistema_MenuItem);
 
         menuBar.add(Sobre);
@@ -456,11 +549,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 668, Short.MAX_VALUE)
+            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 805, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 399, Short.MAX_VALUE)
+            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 429, Short.MAX_VALUE)
         );
 
         pack();
@@ -484,15 +577,67 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField8ActionPerformed
 
     private void procurar_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_procurar_MenuItemActionPerformed
-        jInternalFrameProcurar.setVisible(true);
+        Procurar_JInternalFrame.setVisible(true);
     }//GEN-LAST:event_procurar_MenuItemActionPerformed
+
+    private void sobreSistema_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sobreSistema_MenuItemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_sobreSistema_MenuItemActionPerformed
+
+    private void desenvolvedores_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_desenvolvedores_MenuItemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_desenvolvedores_MenuItemActionPerformed
+
+    private void excluir_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluir_MenuItemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_excluir_MenuItemActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
+        Arquivo arquivo = new Arquivo();
+        
+        String conteudo;
+        String checkBox = "";
+        
+        if (checkBoxFeminino.isSelected()){
+            checkBox = checkBoxFeminino.getText();
+        } else if (checkBoxMasculino.isSelected()){
+            checkBox = checkBoxMasculino.getText();
+        }
+        conteudo = txtNomeCliente.getText() + " ; " +
+                txtCpfCliente.getText() + " ; " +
+                txtRgCliente.getText() + " ; " +
+                checkBox + " ; " +
+                txtRgCliente.getText() + " ; " +
+                txtRuaCliente.getText() + " ; " +
+                txtCidadeCliente.getText() + " ; " +
+                txtCepCliente.getText() + " ; " +
+                jComboBox1.getSelectedItem();
+        arquivo.gravarArquivo(txtNomeCliente.getText(), conteudo);
+
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void txtRgClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRgClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtRgClienteActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void jButtonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonSairActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu Menu;
     private javax.swing.JMenu Pacientes;
+    private javax.swing.JInternalFrame Procurar_JInternalFrame;
     private javax.swing.JMenu Sobre;
     private javax.swing.JInternalFrame cadastrar_JInternalFrame;
     private javax.swing.JMenuItem cadastrar_MenuItem;
+    private javax.swing.JCheckBox checkBoxFeminino;
+    private javax.swing.JCheckBox checkBoxMasculino;
     private javax.swing.JMenuItem desenvolvedores_MenuItem;
     private javax.swing.JDesktopPane desktopPane;
     private javax.swing.JMenuItem excluir_MenuItem;
@@ -502,10 +647,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButtonSair;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JInternalFrame jInternalFrameProcurar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -525,12 +667,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
@@ -538,6 +674,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem procurar_MenuItem;
     private javax.swing.JMenuItem sair_MenuItem;
     private javax.swing.JMenuItem sobreSistema_MenuItem;
+    private javax.swing.JTextField txtCepCliente;
+    private javax.swing.JTextField txtCidadeCliente;
+    private javax.swing.JTextField txtCpfCliente;
+    private javax.swing.JTextField txtNomeCliente;
+    private javax.swing.JTextField txtRgCliente;
+    private javax.swing.JTextField txtRuaCliente;
     // End of variables declaration//GEN-END:variables
 
 }

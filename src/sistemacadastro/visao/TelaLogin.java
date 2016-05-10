@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package visao;
+package sistemacadastro.visao;
 
 import javax.swing.JOptionPane;
 
@@ -38,7 +38,7 @@ public class TelaLogin extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        entrar_jButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/accept.png"))); // NOI18N
+        entrar_jButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemacadastro/icones/accept.png"))); // NOI18N
         entrar_jButton.setText("Entrar");
         entrar_jButton.setBorder(null);
         entrar_jButton.addActionListener(new java.awt.event.ActionListener() {
@@ -49,12 +49,12 @@ public class TelaLogin extends javax.swing.JFrame {
 
         senha_jLabel.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         senha_jLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        senha_jLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/key.png"))); // NOI18N
+        senha_jLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemacadastro/icones/key.png"))); // NOI18N
         senha_jLabel.setText("Senha");
 
         login_jLabel.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         login_jLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        login_jLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/user.png"))); // NOI18N
+        login_jLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemacadastro/icones/user.png"))); // NOI18N
         login_jLabel.setText("Login");
 
         login_jTextField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
