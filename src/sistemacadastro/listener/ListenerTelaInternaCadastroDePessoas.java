@@ -13,6 +13,8 @@ import sistemacadastro.arquivos.Arquivo;
 import sistemacadastro.arquivos.Endereco;
 import sistemacadastro.arquivos.Pessoa;
 import sistemacadastro.visao.TelaInternaCadastroDePessoas;
+import sistemacadastro.visao.TelaInternaProcurar;
+import sistemacadastro.visao.TelaPrincipal;
 
 /**
  *
@@ -24,8 +26,8 @@ public class ListenerTelaInternaCadastroDePessoas implements ActionListener{
     private Pessoa pessoa = new Pessoa();
     private Endereco endereco = new Endereco();
 
-    public ListenerTelaInternaCadastroDePessoas(TelaInternaCadastroDePessoas aCadastro) {
-        this.cadP = aCadastro;
+    public ListenerTelaInternaCadastroDePessoas(TelaInternaCadastroDePessoas aThis) {
+        this.cadP = aThis;
     }
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -45,7 +47,7 @@ public class ListenerTelaInternaCadastroDePessoas implements ActionListener{
             cadP.dispose();
         }
         if ("Buscar".equals(e.getActionCommand())) {
-            cadP.dispose();
+
         }
     }
 }

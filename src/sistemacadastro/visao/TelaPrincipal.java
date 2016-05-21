@@ -19,6 +19,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
      * Creates new form TelaPrincipal
      */
     public TelaPrincipal() {
+       
         initComponents();
         setExtendedState(TelaPrincipal.MAXIMIZED_BOTH);
     }
@@ -313,11 +314,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_sair_MenuItemActionPerformed
 
     private void cadastrar_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrar_MenuItemActionPerformed
-        // TODO add your handling code here:
+
         TelaInternaCadastroDePessoas cadastrar = new TelaInternaCadastroDePessoas();
-        cadastrar.setVisible(true);
+        //cadastrar.setVisible(true);
         desktopPane.add(cadastrar);
-        //cadastrar_JInternalFrame.setVisible(true);
+
     }//GEN-LAST:event_cadastrar_MenuItemActionPerformed
 
     private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
@@ -325,7 +326,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField8ActionPerformed
 
     private void procurar_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_procurar_MenuItemActionPerformed
-        Procurar_JInternalFrame.setVisible(true);
+        
+        TelaInternaProcurar procurar = new TelaInternaProcurar();
+        desktopPane.add(procurar);
     }//GEN-LAST:event_procurar_MenuItemActionPerformed
 
     private void sobreSistema_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sobreSistema_MenuItemActionPerformed

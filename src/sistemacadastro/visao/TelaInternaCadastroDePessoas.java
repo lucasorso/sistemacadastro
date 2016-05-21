@@ -29,6 +29,7 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame imp
     String sexo;
     
     public TelaInternaCadastroDePessoas() {
+        this.setVisible(true);
         initComponents();
     }
 
@@ -215,6 +216,13 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame imp
         jButtonEditar.setText("Editar");
 
         jButtonBuscar.setText("Buscar");
+        jButtonBuscar.setActionCommand("Buscar");
+        jButtonBuscar.addActionListener(listener);
+        jButtonBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonBuscarActionPerformed(evt);
+            }
+        });
 
         jLabel8.setText("Data e Hora: *****");
 
@@ -266,7 +274,7 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame imp
                                 .addComponent(checkBoxFeminino)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addComponent(txtRgCliente))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 83, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonSair, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -311,10 +319,10 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame imp
                     .addComponent(jButtonEditar)
                     .addComponent(jButtonBuscar)
                     .addComponent(jLabel8))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
 
-        setBounds(0, 0, 582, 299);
+        setBounds(0, 0, 647, 375);
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtRgClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRgClienteActionPerformed
@@ -368,6 +376,10 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame imp
             sexo = "Feminio";
         }
     }//GEN-LAST:event_checkBoxFemininoActionPerformed
+
+    private void jButtonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonBuscarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
