@@ -20,6 +20,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
      */
     public TelaPrincipal() {
         initComponents();
+        setExtendedState(TelaPrincipal.MAXIMIZED_BOTH);
     }
 
     /**
@@ -32,30 +33,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         desktopPane = new javax.swing.JDesktopPane();
-        cadastrar_JInternalFrame = new javax.swing.JInternalFrame();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        txtNomeCliente = new javax.swing.JTextField();
-        txtCpfCliente = new javax.swing.JTextField();
-        txtRgCliente = new javax.swing.JTextField();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        txtRuaCliente = new javax.swing.JTextField();
-        txtCidadeCliente = new javax.swing.JTextField();
-        txtCepCliente = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jLabel7 = new javax.swing.JLabel();
-        checkBoxMasculino = new javax.swing.JCheckBox();
-        checkBoxFeminino = new javax.swing.JCheckBox();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
-        jButtonSair = new javax.swing.JButton();
         Procurar_JInternalFrame = new javax.swing.JInternalFrame();
         jPanel2 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
@@ -83,234 +60,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         sobreSistema_MenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        cadastrar_JInternalFrame.setClosable(true);
-        cadastrar_JInternalFrame.setIconifiable(true);
-        cadastrar_JInternalFrame.setMaximizable(true);
-        cadastrar_JInternalFrame.setResizable(true);
-        cadastrar_JInternalFrame.setVisible(false);
-
-        jLabel1.setText("Nome:");
-
-        jLabel2.setText("CPF:");
-
-        jLabel3.setText("RG:");
-
-        txtRgCliente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtRgClienteActionPerformed(evt);
-            }
-        });
-
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Endereço"));
-
-        jLabel4.setText("Rua:");
-
-        jLabel5.setText("Cidade:");
-
-        jLabel6.setText("CEP:");
-
-        jComboBox1.addItem("AC");
-        jComboBox1.addItem("AL");
-        jComboBox1.addItem("AM");
-        jComboBox1.addItem("BA");
-        jComboBox1.addItem("CE");
-        jComboBox1.addItem("DF");
-        jComboBox1.addItem("ES");
-        jComboBox1.addItem("GO");
-        jComboBox1.addItem("MA");
-        jComboBox1.addItem("MT");
-        jComboBox1.addItem("MS");
-        jComboBox1.addItem("MG");
-        jComboBox1.addItem("PA");
-        jComboBox1.addItem("PB");
-        jComboBox1.addItem("PR");
-        jComboBox1.addItem("PE");
-        jComboBox1.addItem("PI");
-        jComboBox1.addItem("RJ");
-        jComboBox1.addItem("RN");
-        jComboBox1.addItem("RS");
-        jComboBox1.addItem("RO");
-        jComboBox1.addItem("RR");
-        jComboBox1.addItem("SC");
-        jComboBox1.addItem("SP");
-        jComboBox1.addItem("SE");
-        jComboBox1.addItem("TO");
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
-            }
-        });
-
-        jLabel7.setText("Estado:");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtRuaCliente))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtCidadeCliente))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel7))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtCepCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(146, 146, 146)))))
-                .addGap(30, 30, 30))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(txtRuaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(txtCidadeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(txtCepCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
-                .addContainerGap(13, Short.MAX_VALUE))
-        );
-
-        jComboBox1.getAccessibleContext().setAccessibleName("");
-        jComboBox1.getAccessibleContext().setAccessibleDescription("");
-
-        checkBoxMasculino.setText("Masculino");
-
-        checkBoxFeminino.setText("Feminino");
-
-        jButton1.setText("Salvar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
-        jButton2.setText("Excluir");
-
-        jButton3.setText("Editar");
-
-        jButton4.setText("Buscar");
-
-        jLabel8.setText("Data e Hora: *****");
-
-        jButtonSair.setText("Sair");
-        jButtonSair.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButtonSairMouseClicked(evt);
-            }
-        });
-        jButtonSair.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSairActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout cadastrar_JInternalFrameLayout = new javax.swing.GroupLayout(cadastrar_JInternalFrame.getContentPane());
-        cadastrar_JInternalFrame.getContentPane().setLayout(cadastrar_JInternalFrameLayout);
-        cadastrar_JInternalFrameLayout.setHorizontalGroup(
-            cadastrar_JInternalFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cadastrar_JInternalFrameLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(cadastrar_JInternalFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(cadastrar_JInternalFrameLayout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtCpfCliente))
-                    .addGroup(cadastrar_JInternalFrameLayout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(cadastrar_JInternalFrameLayout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(23, 23, 23)
-                        .addGroup(cadastrar_JInternalFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(cadastrar_JInternalFrameLayout.createSequentialGroup()
-                                .addGroup(cadastrar_JInternalFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton3)
-                                    .addComponent(jButton1))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(cadastrar_JInternalFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton2)
-                                    .addComponent(jButton4))
-                                .addGap(38, 38, 38))
-                            .addGroup(cadastrar_JInternalFrameLayout.createSequentialGroup()
-                                .addComponent(checkBoxMasculino)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(checkBoxFeminino)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(txtRgCliente))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 98, Short.MAX_VALUE)
-                .addGroup(cadastrar_JInternalFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonSair, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cadastrar_JInternalFrameLayout.createSequentialGroup()
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(53, 53, 53)))
-                .addGap(22, 22, 22))
-        );
-        cadastrar_JInternalFrameLayout.setVerticalGroup(
-            cadastrar_JInternalFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cadastrar_JInternalFrameLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addGroup(cadastrar_JInternalFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(cadastrar_JInternalFrameLayout.createSequentialGroup()
-                        .addGroup(cadastrar_JInternalFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(txtNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(cadastrar_JInternalFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(txtCpfCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(cadastrar_JInternalFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtRgCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3))
-                        .addGap(18, 18, 18)
-                        .addGroup(cadastrar_JInternalFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(checkBoxMasculino)
-                            .addComponent(checkBoxFeminino)))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(cadastrar_JInternalFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(cadastrar_JInternalFrameLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(cadastrar_JInternalFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton1)
-                            .addComponent(jButton2)))
-                    .addGroup(cadastrar_JInternalFrameLayout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(jButtonSair)))
-                .addGap(18, 18, 18)
-                .addGroup(cadastrar_JInternalFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4)
-                    .addComponent(jLabel8))
-                .addContainerGap(16, Short.MAX_VALUE))
-        );
-
-        desktopPane.add(cadastrar_JInternalFrame);
-        cadastrar_JInternalFrame.setBounds(50, 70, 570, 290);
 
         Procurar_JInternalFrame.setClosable(true);
         Procurar_JInternalFrame.setIconifiable(true);
@@ -565,12 +314,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void cadastrar_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrar_MenuItemActionPerformed
         // TODO add your handling code here:
-        cadastrar_JInternalFrame.setVisible(true);
+        CadastroDePessoas cadastrar = new CadastroDePessoas();
+        cadastrar.setVisible(true);
+        desktopPane.add(cadastrar);
+        //cadastrar_JInternalFrame.setVisible(true);
     }//GEN-LAST:event_cadastrar_MenuItemActionPerformed
-
-    private void jButtonSairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonSairMouseClicked
-        cadastrar_JInternalFrame.setVisible(false);
-    }//GEN-LAST:event_jButtonSairMouseClicked
 
     private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
         // TODO add your handling code here:
@@ -592,75 +340,20 @@ public class TelaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_excluir_MenuItemActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
-        Arquivo arquivo = new Arquivo();
-        
-        String conteudo;
-        String checkBox = "";
-        
-        if (checkBoxFeminino.isSelected()){
-            checkBox = checkBoxFeminino.getText();
-        } else if (checkBoxMasculino.isSelected()){
-            checkBox = checkBoxMasculino.getText();
-        }
-        conteudo = txtNomeCliente.getText() + " ; " +
-                txtCpfCliente.getText() + " ; " +
-                txtRgCliente.getText() + " ; " +
-                checkBox + " ; " +
-                txtRgCliente.getText() + " ; " +
-                txtRuaCliente.getText() + " ; " +
-                txtCidadeCliente.getText() + " ; " +
-                txtCepCliente.getText() + " ; " +
-                jComboBox1.getSelectedItem();
-        arquivo.gravarArquivo(txtNomeCliente.getText(), conteudo);
-
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void txtRgClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRgClienteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtRgClienteActionPerformed
-
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
-
-    private void jButtonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonSairActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu Menu;
     private javax.swing.JMenu Pacientes;
     private javax.swing.JInternalFrame Procurar_JInternalFrame;
     private javax.swing.JMenu Sobre;
-    private javax.swing.JInternalFrame cadastrar_JInternalFrame;
     private javax.swing.JMenuItem cadastrar_MenuItem;
-    private javax.swing.JCheckBox checkBoxFeminino;
-    private javax.swing.JCheckBox checkBoxMasculino;
     private javax.swing.JMenuItem desenvolvedores_MenuItem;
     private javax.swing.JDesktopPane desktopPane;
     private javax.swing.JMenuItem excluir_MenuItem;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButtonSair;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -674,12 +367,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem procurar_MenuItem;
     private javax.swing.JMenuItem sair_MenuItem;
     private javax.swing.JMenuItem sobreSistema_MenuItem;
-    private javax.swing.JTextField txtCepCliente;
-    private javax.swing.JTextField txtCidadeCliente;
-    private javax.swing.JTextField txtCpfCliente;
-    private javax.swing.JTextField txtNomeCliente;
-    private javax.swing.JTextField txtRgCliente;
-    private javax.swing.JTextField txtRuaCliente;
     // End of variables declaration//GEN-END:variables
 
 }
