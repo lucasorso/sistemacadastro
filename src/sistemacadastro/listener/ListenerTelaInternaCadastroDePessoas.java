@@ -12,19 +12,19 @@ import javax.swing.JOptionPane;
 import sistemacadastro.arquivos.Arquivo;
 import sistemacadastro.arquivos.Endereco;
 import sistemacadastro.arquivos.Pessoa;
-import sistemacadastro.visao.CadastroDePessoas;
+import sistemacadastro.visao.TelaInternaCadastroDePessoas;
 
 /**
  *
- * @author comp1
+ * @author Gregori Oliveira, Lucas Orso, Yuri Abel
  */
-public class CadastroDePessoasListener implements ActionListener{
+public class ListenerTelaInternaCadastroDePessoas implements ActionListener{
     
-    private CadastroDePessoas cadP;
+    private TelaInternaCadastroDePessoas cadP;
     private Pessoa pessoa = new Pessoa();
     private Endereco endereco = new Endereco();
 
-    public CadastroDePessoasListener(CadastroDePessoas aCadastro) {
+    public ListenerTelaInternaCadastroDePessoas(TelaInternaCadastroDePessoas aCadastro) {
         this.cadP = aCadastro;
     }
     @Override
@@ -33,8 +33,10 @@ public class CadastroDePessoasListener implements ActionListener{
             cadP.dispose();
         }
         if ("Salvar".equals(e.getActionCommand())) {
-            pessoa = cadP.setinf();
-            JOptionPane.showMessageDialog(null, pessoa.getNome() + " " +  pessoa.getCpf() + " " +  pessoa.getRg() + " " + pessoa.getSexo());
+            pessoa = cadP.setInformacoesPessoa();
+            endereco = cadP.setInformacoesEndereco();
+            JOptionPane.showMessageDialog(null, pessoa.getNome() + " " +  pessoa.getCpf() + " " +  pessoa.getRg() + " " + pessoa.getSexo()
+             + " " + endereco.getRua() + " " + endereco.getCep() + " " + endereco.getCidade() + " " + endereco.getEstado());
         }
         if ("Editar".equals(e.getActionCommand())) {
             cadP.dispose();

@@ -193,7 +193,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="txtCepCliente" alignment="0" min="-2" pref="190" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jComboBox1" max="32767" attributes="0"/>
+                                  <Component id="txtEstadoCliente" max="32767" attributes="0"/>
                                   <EmptySpace min="146" pref="146" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -223,7 +223,7 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtEstadoCliente" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="13" max="32767" attributes="0"/>
@@ -253,17 +253,17 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txtCepCliente">
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox1">
+        <Component class="javax.swing.JComboBox" name="txtEstadoCliente">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="0"/>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtEstadoClienteActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="jComboBox1.addItem(&quot;AL&quot;);&#xa;jComboBox1.addItem(&quot;AM&quot;);&#xa;jComboBox1.addItem(&quot;BA&quot;);&#xa;jComboBox1.addItem(&quot;CE&quot;);&#xa;jComboBox1.addItem(&quot;DF&quot;);&#xa;jComboBox1.addItem(&quot;ES&quot;);&#xa;jComboBox1.addItem(&quot;GO&quot;);&#xa;jComboBox1.addItem(&quot;MA&quot;);&#xa;jComboBox1.addItem(&quot;MT&quot;);&#xa;jComboBox1.addItem(&quot;MS&quot;);&#xa;jComboBox1.addItem(&quot;MG&quot;);&#xa;jComboBox1.addItem(&quot;PA&quot;);&#xa;jComboBox1.addItem(&quot;PB&quot;);&#xa;jComboBox1.addItem(&quot;PR&quot;);&#xa;jComboBox1.addItem(&quot;PE&quot;);&#xa;jComboBox1.addItem(&quot;PI&quot;);&#xa;jComboBox1.addItem(&quot;RJ&quot;);&#xa;jComboBox1.addItem(&quot;RN&quot;);&#xa;jComboBox1.addItem(&quot;RS&quot;);&#xa;jComboBox1.addItem(&quot;RO&quot;);&#xa;jComboBox1.addItem(&quot;RR&quot;);&#xa;jComboBox1.addItem(&quot;SC&quot;);&#xa;jComboBox1.addItem(&quot;SP&quot;);&#xa;jComboBox1.addItem(&quot;SE&quot;);&#xa;jComboBox1.addItem(&quot;TO&quot;);"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="txtEstadoCliente.addItem(&quot;AL&quot;);&#xa;txtEstadoCliente.addItem(&quot;AM&quot;);&#xa;txtEstadoCliente.addItem(&quot;BA&quot;);&#xa;txtEstadoCliente.addItem(&quot;CE&quot;);&#xa;txtEstadoCliente.addItem(&quot;DF&quot;);&#xa;txtEstadoCliente.addItem(&quot;ES&quot;);&#xa;txtEstadoCliente.addItem(&quot;GO&quot;);&#xa;txtEstadoCliente.addItem(&quot;MA&quot;);&#xa;txtEstadoCliente.addItem(&quot;MT&quot;);&#xa;txtEstadoCliente.addItem(&quot;MS&quot;);&#xa;txtEstadoCliente.addItem(&quot;MG&quot;);&#xa;txtEstadoCliente.addItem(&quot;PA&quot;);&#xa;txtEstadoCliente.addItem(&quot;PB&quot;);&#xa;txtEstadoCliente.addItem(&quot;PR&quot;);&#xa;txtEstadoCliente.addItem(&quot;PE&quot;);&#xa;txtEstadoCliente.addItem(&quot;PI&quot;);&#xa;txtEstadoCliente.addItem(&quot;RJ&quot;);&#xa;txtEstadoCliente.addItem(&quot;RN&quot;);&#xa;txtEstadoCliente.addItem(&quot;RS&quot;);&#xa;txtEstadoCliente.addItem(&quot;RO&quot;);&#xa;txtEstadoCliente.addItem(&quot;RR&quot;);&#xa;txtEstadoCliente.addItem(&quot;SC&quot;);&#xa;txtEstadoCliente.addItem(&quot;SP&quot;);&#xa;txtEstadoCliente.addItem(&quot;SE&quot;);&#xa;txtEstadoCliente.addItem(&quot;TO&quot;);"/>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>

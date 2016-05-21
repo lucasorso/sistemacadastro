@@ -7,36 +7,49 @@ package sistemacadastro.visao;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javafx.scene.control.ComboBox;
 import javax.swing.JButton;
 import sistemacadastro.arquivos.Arquivo;
+import sistemacadastro.arquivos.Endereco;
 import sistemacadastro.arquivos.Pessoa;
-import sistemacadastro.listener.CadastroDePessoasListener;
+import sistemacadastro.listener.ListenerTelaInternaCadastroDePessoas;
 
 /**
  *
- * @author comp1
+ * @author Gregori Oliveira, Lucas Orso, Yuri Abel
  */
-public class CadastroDePessoas extends javax.swing.JInternalFrame implements ActionListener {
+public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame implements ActionListener {
 
     /**
      * Creates new form cadastroDePessoas
      */
-    private CadastroDePessoasListener listener = new CadastroDePessoasListener(this);
-    Pessoa pess = new Pessoa();
+    private ListenerTelaInternaCadastroDePessoas listener = new ListenerTelaInternaCadastroDePessoas(this);
+    Pessoa pessoa = new Pessoa();
+    Endereco endereco = new Endereco();
     String sexo;
     
-    public CadastroDePessoas() {
+    public TelaInternaCadastroDePessoas() {
         initComponents();
     }
 
-    public Pessoa setinf() {
+    public Pessoa setInformacoesPessoa(){
      
-        pess.setNome(txtNomeCliente.getText());
-        pess.setCpf(txtCpfCliente.getText());
-        pess.setRg(txtRgCliente.getText());
-        pess.setSexo(this.sexo);
+        pessoa.setNome(txtNomeCliente.getText());
+        pessoa.setCpf(txtCpfCliente.getText());
+        pessoa.setRg(txtRgCliente.getText());
+        pessoa.setSexo(this.sexo);
         
-        return pess;
+        return pessoa;
+    }
+    
+    public Endereco setInformacoesEndereco(){
+        
+        endereco.setRua(txtRuaCliente.getText());
+        endereco.setCep(txtCepCliente.getText());
+        endereco.setCidade(txtCidadeCliente.getText());
+        endereco.setEstado(txtEstadoCliente.getSelectedItem().toString());
+        
+        return endereco;
     }
 
     /**
@@ -61,7 +74,7 @@ public class CadastroDePessoas extends javax.swing.JInternalFrame implements Act
         txtRuaCliente = new javax.swing.JTextField();
         txtCidadeCliente = new javax.swing.JTextField();
         txtCepCliente = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        txtEstadoCliente = new javax.swing.JComboBox<String>();
         jLabel7 = new javax.swing.JLabel();
         checkBoxMasculino = new javax.swing.JCheckBox();
         checkBoxFeminino = new javax.swing.JCheckBox();
@@ -92,34 +105,34 @@ public class CadastroDePessoas extends javax.swing.JInternalFrame implements Act
 
         jLabel6.setText("CEP:");
 
-        jComboBox1.addItem("AL");
-        jComboBox1.addItem("AM");
-        jComboBox1.addItem("BA");
-        jComboBox1.addItem("CE");
-        jComboBox1.addItem("DF");
-        jComboBox1.addItem("ES");
-        jComboBox1.addItem("GO");
-        jComboBox1.addItem("MA");
-        jComboBox1.addItem("MT");
-        jComboBox1.addItem("MS");
-        jComboBox1.addItem("MG");
-        jComboBox1.addItem("PA");
-        jComboBox1.addItem("PB");
-        jComboBox1.addItem("PR");
-        jComboBox1.addItem("PE");
-        jComboBox1.addItem("PI");
-        jComboBox1.addItem("RJ");
-        jComboBox1.addItem("RN");
-        jComboBox1.addItem("RS");
-        jComboBox1.addItem("RO");
-        jComboBox1.addItem("RR");
-        jComboBox1.addItem("SC");
-        jComboBox1.addItem("SP");
-        jComboBox1.addItem("SE");
-        jComboBox1.addItem("TO");
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        txtEstadoCliente.addItem("AL");
+        txtEstadoCliente.addItem("AM");
+        txtEstadoCliente.addItem("BA");
+        txtEstadoCliente.addItem("CE");
+        txtEstadoCliente.addItem("DF");
+        txtEstadoCliente.addItem("ES");
+        txtEstadoCliente.addItem("GO");
+        txtEstadoCliente.addItem("MA");
+        txtEstadoCliente.addItem("MT");
+        txtEstadoCliente.addItem("MS");
+        txtEstadoCliente.addItem("MG");
+        txtEstadoCliente.addItem("PA");
+        txtEstadoCliente.addItem("PB");
+        txtEstadoCliente.addItem("PR");
+        txtEstadoCliente.addItem("PE");
+        txtEstadoCliente.addItem("PI");
+        txtEstadoCliente.addItem("RJ");
+        txtEstadoCliente.addItem("RN");
+        txtEstadoCliente.addItem("RS");
+        txtEstadoCliente.addItem("RO");
+        txtEstadoCliente.addItem("RR");
+        txtEstadoCliente.addItem("SC");
+        txtEstadoCliente.addItem("SP");
+        txtEstadoCliente.addItem("SE");
+        txtEstadoCliente.addItem("TO");
+        txtEstadoCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                txtEstadoClienteActionPerformed(evt);
             }
         });
 
@@ -148,7 +161,7 @@ public class CadastroDePessoas extends javax.swing.JInternalFrame implements Act
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtCepCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(txtEstadoCliente, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(146, 146, 146)))))
                 .addGap(30, 30, 30))
         );
@@ -169,7 +182,7 @@ public class CadastroDePessoas extends javax.swing.JInternalFrame implements Act
                     .addComponent(txtCepCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtEstadoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
                 .addContainerGap(13, Short.MAX_VALUE))
         );
@@ -308,9 +321,9 @@ public class CadastroDePessoas extends javax.swing.JInternalFrame implements Act
         // TODO add your handling code here:
     }//GEN-LAST:event_txtRgClienteActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void txtEstadoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEstadoClienteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_txtEstadoClienteActionPerformed
 
     private void jButtonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarActionPerformed
 //        Arquivo arquivo = new Arquivo();
@@ -365,7 +378,6 @@ public class CadastroDePessoas extends javax.swing.JInternalFrame implements Act
     private javax.swing.JButton jButtonExcluir;
     private javax.swing.JButton jButtonSair;
     private javax.swing.JButton jButtonSalvar;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -378,6 +390,7 @@ public class CadastroDePessoas extends javax.swing.JInternalFrame implements Act
     private javax.swing.JTextField txtCepCliente;
     private javax.swing.JTextField txtCidadeCliente;
     private javax.swing.JTextField txtCpfCliente;
+    private javax.swing.JComboBox<String> txtEstadoCliente;
     public javax.swing.JTextField txtNomeCliente;
     private javax.swing.JTextField txtRgCliente;
     private javax.swing.JTextField txtRuaCliente;

@@ -106,6 +106,7 @@ public class TelaLogin extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void entrar_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrar_jButtonActionPerformed

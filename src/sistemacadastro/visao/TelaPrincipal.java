@@ -314,7 +314,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void cadastrar_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrar_MenuItemActionPerformed
         // TODO add your handling code here:
-        CadastroDePessoas cadastrar = new CadastroDePessoas();
+        TelaInternaCadastroDePessoas cadastrar = new TelaInternaCadastroDePessoas();
         cadastrar.setVisible(true);
         desktopPane.add(cadastrar);
         //cadastrar_JInternalFrame.setVisible(true);
@@ -368,5 +368,4 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem sair_MenuItem;
     private javax.swing.JMenuItem sobreSistema_MenuItem;
     // End of variables declaration//GEN-END:variables
-
 }
