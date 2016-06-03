@@ -302,7 +302,7 @@ public class TelaInternaCadastroMedico extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         if (checkBoxFeminino.isSelected()) {
             checkBoxMasculino.setSelected(false);
-            sexo = "Feminio";
+            String sexo = "Feminio";
         }
     }//GEN-LAST:event_checkBoxFemininoActionPerformed
 
@@ -310,7 +310,7 @@ public class TelaInternaCadastroMedico extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         if (checkBoxMasculino.isSelected()) {
             checkBoxFeminino.setSelected(false);
-            sexo = "Masculino";
+            String sexo = "Masculino";
         }
     }//GEN-LAST:event_checkBoxMasculinoActionPerformed
 
