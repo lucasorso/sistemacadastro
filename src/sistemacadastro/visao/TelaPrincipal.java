@@ -33,6 +33,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuItem1 = new javax.swing.JMenuItem();
         desktopPane = new javax.swing.JDesktopPane();
         Procurar_JInternalFrame = new javax.swing.JInternalFrame();
         jPanel2 = new javax.swing.JPanel();
@@ -51,14 +52,18 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jTextArea1 = new javax.swing.JTextArea();
         menuBar = new javax.swing.JMenuBar();
         Menu = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
         sair_MenuItem = new javax.swing.JMenuItem();
         Pacientes = new javax.swing.JMenu();
         cadastrar_MenuItem = new javax.swing.JMenuItem();
-        excluir_MenuItem = new javax.swing.JMenuItem();
         procurar_MenuItem = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
         Sobre = new javax.swing.JMenu();
         desenvolvedores_MenuItem = new javax.swing.JMenuItem();
         sobreSistema_MenuItem = new javax.swing.JMenuItem();
+
+        jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -130,7 +135,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
@@ -221,6 +226,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         Menu.setMnemonic('f');
         Menu.setText("Sistema");
 
+        jMenuItem2.setText("Cadastrar Usuarios");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        Menu.add(jMenuItem2);
+
         sair_MenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemacadastro/icones/cancel.png"))); // NOI18N
         sair_MenuItem.setMnemonic('x');
         sair_MenuItem.setText("Sair");
@@ -246,16 +259,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         Pacientes.add(cadastrar_MenuItem);
 
-        excluir_MenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemacadastro/icones/application_form_delete.png"))); // NOI18N
-        excluir_MenuItem.setMnemonic('y');
-        excluir_MenuItem.setText("Excluir");
-        excluir_MenuItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                excluir_MenuItemActionPerformed(evt);
-            }
-        });
-        Pacientes.add(excluir_MenuItem);
-
         procurar_MenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemacadastro/icones/application_form_magnify.png"))); // NOI18N
         procurar_MenuItem.setMnemonic('p');
         procurar_MenuItem.setText("Procurar");
@@ -267,6 +270,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
         Pacientes.add(procurar_MenuItem);
 
         menuBar.add(Pacientes);
+
+        jMenu1.setText("Medicos");
+
+        jMenuItem3.setText("Cadastrar");
+        jMenu1.add(jMenuItem3);
+
+        menuBar.add(jMenu1);
 
         Sobre.setMnemonic('h');
         Sobre.setText("Sobre");
@@ -339,9 +349,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_desenvolvedores_MenuItemActionPerformed
 
-    private void excluir_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluir_MenuItemActionPerformed
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_excluir_MenuItemActionPerformed
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu Menu;
@@ -351,12 +361,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem cadastrar_MenuItem;
     private javax.swing.JMenuItem desenvolvedores_MenuItem;
     private javax.swing.JDesktopPane desktopPane;
-    private javax.swing.JMenuItem excluir_MenuItem;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
