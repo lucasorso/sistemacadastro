@@ -6,6 +6,8 @@
 package sistemacadastro.visao;
 
 import javax.swing.JOptionPane;
+import sistemacadastro.arquivos.Usuario;
+import sistemacadastro.listener.ListenerTelaLogin;
 
 /**
  *
@@ -13,6 +15,14 @@ import javax.swing.JOptionPane;
  */
 public class TelaLogin extends javax.swing.JFrame {
 
+    private ListenerTelaLogin listener = new  ListenerTelaLogin(this);
+    Usuario user = new Usuario();
+    
+    public Usuario setInfo(){
+        user.setNome(login_jTextField.getText());
+        user.setSenha(password_jPasswordField.getText());
+        return user;
+    }
     /**
      * Creates new form Login
      */
@@ -40,6 +50,8 @@ public class TelaLogin extends javax.swing.JFrame {
 
         entrar_jButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemacadastro/icones/accept.png"))); // NOI18N
         entrar_jButton.setText("Entrar");
+        entrar_jButton.setActionCommand("Entrar");
+        entrar_jButton.addActionListener(listener);
         entrar_jButton.setBorder(null);
         entrar_jButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

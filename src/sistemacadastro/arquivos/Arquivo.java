@@ -1,6 +1,7 @@
 package sistemacadastro.arquivos;
 
 import java.awt.Container;
+import java.awt.HeadlessException;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -13,7 +14,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
 public class Arquivo extends JFrame{
-    
+  
     public void abrirArquivo(){
         JFileChooser fc = new JFileChooser();
         fc.showOpenDialog(this);
@@ -57,9 +58,10 @@ public class Arquivo extends JFrame{
         return null;
     }
 
-    public void gravarArquivo(String nomeArquivo, String textoArquivo) {
+    public void gravarArquivo(String nomeArquivo, Usuario aUsuario) {
         FileWriter fileWriter = null;
         BufferedWriter bufferedWriter = null;
+        String textoArquivo =  (aUsuario.getNome() + "\n" + aUsuario.getSenha());
         try {
             fileWriter = new FileWriter(nomeArquivo + ".txt", false);
             bufferedWriter = new BufferedWriter(fileWriter);
