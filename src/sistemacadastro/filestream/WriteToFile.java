@@ -10,7 +10,7 @@ public class WriteToFile {
         FileOutputStream escritorArquivos = new FileOutputStream(logFile, true);
         int tamanho = 0;
         String data = (new java.util.Date()).toString();
-        String msg = "\n" + data + " : " + mensagem + "\n";
+        String msg = data + " : " + mensagem + "\n";
         while (tamanho < msg.length()) {
             escritorArquivos.write((int)msg.charAt(tamanho++));
         }

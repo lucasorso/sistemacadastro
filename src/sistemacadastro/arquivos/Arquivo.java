@@ -35,33 +35,29 @@ public class Arquivo extends JFrame{
             }
             return sb.toString();
         } catch (java.io.IOException ex) {
-            JOptionPane.showMessageDialog(null, "Erro ao abrir o arquivo: "
-                    + ex.getMessage());
+            JOptionPane.showMessageDialog(null, "Erro ao abrir o arquivo: " + ex.getMessage());
         } finally {
             if (bufferedReader != null) {
                 try {
                     bufferedReader.close();
                 } catch (java.io.IOException ex) {
-                    JOptionPane.showMessageDialog(null, "Erro ao abrir o arquivo: "
-                            + ex.getMessage());
+                    JOptionPane.showMessageDialog(null, "Erro ao abrir o arquivo: " + ex.getMessage());
                 }
             }
             if (fileReader != null) {
                 try {
                     fileReader.close();
                 } catch (java.io.IOException ex) {
-                    JOptionPane.showMessageDialog(null, "Erro ao abrir o arquivo: "
-                            + ex.getMessage());
+                    JOptionPane.showMessageDialog(null, "Erro ao abrir o arquivo: " + ex.getMessage());
                 }
             }
         }
         return null;
     }
 
-    public void gravarArquivo(String nomeArquivo, Usuario aUsuario) {
+    public void gravarArquivo(String nomeArquivo, String textoArquivo) {
         FileWriter fileWriter = null;
         BufferedWriter bufferedWriter = null;
-        String textoArquivo =  (aUsuario.getNome() + "\n" + aUsuario.getSenha());
         try {
             fileWriter = new FileWriter(nomeArquivo + ".txt", false);
             bufferedWriter = new BufferedWriter(fileWriter);

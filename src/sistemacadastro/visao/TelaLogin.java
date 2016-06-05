@@ -5,8 +5,11 @@
  */
 package sistemacadastro.visao;
 
+import static java.awt.SystemColor.info;
 import javax.swing.JOptionPane;
+import sistemacadastro.arquivos.LerUsuario;
 import sistemacadastro.arquivos.Usuario;
+import sistemacadastro.exceptions.ExceptionGravarArquivo;
 import sistemacadastro.listener.ListenerTelaLogin;
 
 /**
@@ -15,19 +18,33 @@ import sistemacadastro.listener.ListenerTelaLogin;
  */
 public class TelaLogin extends javax.swing.JFrame {
 
-    private ListenerTelaLogin listener = new  ListenerTelaLogin(this);
+    private ListenerTelaLogin listener = new ListenerTelaLogin(this);
     Usuario user = new Usuario();
-    
-    public Usuario setInfo(){
+
+    public Usuario setInfo() throws ExceptionGravarArquivo {
         user.setNome(login_jTextField.getText());
         user.setSenha(password_jPasswordField.getText());
         return user;
     }
+
+    public void verificaLogin() {
+        LerUsuario leitorAquivo;
+        leitorAquivo = new LerUsuario();
+        if (leitorAquivo.lerArquivo("login.txt") != null) {
+            String[] info = leitorAquivo.lerArquivo("login.txt").split(";");
+            user.setNome(info[0]);
+            user.setSenha(info[1]);
+            login_jTextField.setText(user.getNome());
+            password_jPasswordField.setText(user.getSenha());
+        } 
+    }
+
     /**
      * Creates new form Login
      */
     public TelaLogin() {
         initComponents();
+        verificaLogin();
     }
 
     /**
@@ -123,18 +140,18 @@ public class TelaLogin extends javax.swing.JFrame {
 
     private void entrar_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrar_jButtonActionPerformed
         // TODO add your handling code here:
-        String login = login_jTextField.getText();
-        String password = evt.getActionCommand().copyValueOf(password_jPasswordField.getPassword());
- 
-        
-        if (login.equals(password)){
-            TelaPrincipal telaPrincipal = new TelaPrincipal();
-            telaPrincipal.setVisible(true);
-            setVisible(false);
-        } else {
-            JOptionPane.showMessageDialog(this, "Senha inválida para o usuario " + login, "Usuário ou senha inválidos",  JOptionPane.ERROR_MESSAGE);
-                }
-        
+//        String login = login_jTextField.getText();
+//        String password = evt.getActionCommand().copyValueOf(password_jPasswordField.getPassword());
+// 
+//        
+//        if (login.equals(password)){
+//            TelaPrincipal telaPrincipal = new TelaPrincipal();
+//            telaPrincipal.setVisible(true);
+//            setVisible(false);
+//        } else {
+//            JOptionPane.showMessageDialog(this, "Senha inválida para o usuario " + login, "Usuário ou senha inválidos",  JOptionPane.ERROR_MESSAGE);
+//                }
+//        
     }//GEN-LAST:event_entrar_jButtonActionPerformed
 
     private void password_jPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_password_jPasswordFieldActionPerformed
@@ -185,4 +202,5 @@ public class TelaLogin extends javax.swing.JFrame {
     private javax.swing.JPasswordField password_jPasswordField;
     private javax.swing.JLabel senha_jLabel;
     // End of variables declaration//GEN-END:variables
+
 }

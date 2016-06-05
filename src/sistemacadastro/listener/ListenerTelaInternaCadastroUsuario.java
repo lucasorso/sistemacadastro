@@ -8,6 +8,7 @@ package sistemacadastro.listener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import sistemacadastro.arquivos.Arquivo;
+import sistemacadastro.arquivos.GravarUsuario;
 import sistemacadastro.arquivos.Usuario;
 import sistemacadastro.visao.TelaInternaCadastoUsuario;
 
@@ -29,7 +30,7 @@ public class ListenerTelaInternaCadastroUsuario implements ActionListener{
         if ("Salvar".equals(e.getActionCommand())){
             
             usuario = cadUser.setInfoUsuario();
-            Arquivo arq = new Arquivo();
+            GravarUsuario arq = new GravarUsuario();
             
             arq.gravarArquivo("Usuarios.txt", usuario);
         }
