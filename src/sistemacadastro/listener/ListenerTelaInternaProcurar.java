@@ -7,23 +7,32 @@ package sistemacadastro.listener;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import sistemacadastro.filestream.WriteToFile;
 import sistemacadastro.visao.TelaInternaProcurar;
 
 /**
  *
  * @author Lucas
  */
-public class ListenerTelaInternaProcurar implements ActionListener{
-    
+public class ListenerTelaInternaProcurar implements ActionListener {
+
     private TelaInternaProcurar procP;
-    
+
     public ListenerTelaInternaProcurar(TelaInternaProcurar aThis) {
         this.procP = aThis;
     }
 
     @Override
-    public void actionPerformed(ActionEvent ae) {
-      
+    public void actionPerformed(ActionEvent e) {
+        if ("Buscar".equals(e.getActionCommand())) {
+            try {
+                WriteToFile.escrever("Buscou Paciente ","Logs.txt");
+            } catch (IOException ex) {
+                Logger.getLogger(ListenerTelaInternaCadastroUsuario.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }
-    
 }

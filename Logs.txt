@@ -1,2 +1,24 @@
 Sat Jun 04 19:46:10 BRT 2016 : Novo login Lucas Orso;System.123
 Sat Jun 04 19:46:15 BRT 2016 : Último login por Lucas Orso;System.123 
+Fri Jun 10 20:31:49 BRT 2016 : Último login por Lucas Orso;System.123 
+Fri Jun 10 20:40:29 BRT 2016 : Último login por Lucas Orso;System.123 
+Fri Jun 10 20:40:36 BRT 2016 : Cadastrou Paciente 
+Fri Jun 10 20:40:39 BRT 2016 : Buscou Paciente 
+Fri Jun 10 20:40:40 BRT 2016 : Buscou Paciente 
+Fri Jun 10 20:40:40 BRT 2016 : Cadastrou Paciente 
+Fri Jun 10 20:40:42 BRT 2016 : Cadastrou Paciente 
+Fri Jun 10 20:41:34 BRT 2016 : Último login por Lucas Orso;System.123 
+Fri Jun 10 20:41:54 BRT 2016 : Cadastrou Usuario 
+Fri Jun 10 20:51:15 BRT 2016 : Último login por Lucas Orso;System.123 
+Fri Jun 10 20:51:49 BRT 2016 : Cadastrou Paciente 
+Fri Jun 10 20:54:25 BRT 2016 : Último login por Lucas Orso;System.123 
+Fri Jun 10 20:55:01 BRT 2016 : Último login por Lucas Orso;System.123 
+Fri Jun 10 21:01:06 BRT 2016 : Último login por Lucas Orso;System.123 
+Fri Jun 10 21:02:35 BRT 2016 : Último login por Lucas Orso;System.123 
+Fri Jun 10 21:25:54 BRT 2016 : Último login por Lucas Orso;System.123 
+Fri Jun 10 21:26:09 BRT 2016 : Cadastrou Usuario 
+Fri Jun 10 21:27:44 BRT 2016 : Último login por Lucas Orso;System.123 
+Fri Jun 10 21:30:23 BRT 2016 : Último login por Lucas Orso;System.123 
+Fri Jun 10 21:31:08 BRT 2016 : Último login por Lucas Orso;System.123 
+Fri Jun 10 21:31:34 BRT 2016 : Último login por Lucas Orso;System.123 
+Fri Jun 10 21:31:38 BRT 2016 : Cadastrou Medico 

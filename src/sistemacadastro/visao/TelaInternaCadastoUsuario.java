@@ -47,6 +47,9 @@ public class TelaInternaCadastoUsuario extends javax.swing.JInternalFrame {
         txtSenhaUsuario = new javax.swing.JTextField();
         jButton1Salvar = new javax.swing.JButton();
 
+        setClosable(true);
+        setTitle("Cadastro de Usuario");
+
         jLabel1.setText("Usuario:");
 
         jLabel2.setText("Senha:");

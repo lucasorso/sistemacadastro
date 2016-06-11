@@ -52,13 +52,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jTextArea1 = new javax.swing.JTextArea();
         menuBar = new javax.swing.JMenuBar();
         Menu = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        cadastroUsuario_MenuItem = new javax.swing.JMenuItem();
         sair_MenuItem = new javax.swing.JMenuItem();
         Pacientes = new javax.swing.JMenu();
-        cadastrar_MenuItem = new javax.swing.JMenuItem();
+        cadastrarPessoa_MenuItem = new javax.swing.JMenuItem();
         procurar_MenuItem = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        cadastrarMedico_MenuItem = new javax.swing.JMenuItem();
         Sobre = new javax.swing.JMenu();
         desenvolvedores_MenuItem = new javax.swing.JMenuItem();
         sobreSistema_MenuItem = new javax.swing.JMenuItem();
@@ -226,13 +226,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         Menu.setMnemonic('f');
         Menu.setText("Sistema");
 
-        jMenuItem2.setText("Cadastrar Usuarios");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        cadastroUsuario_MenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemacadastro/icones/user.png"))); // NOI18N
+        cadastroUsuario_MenuItem.setText("Cadastrar Usuarios");
+        cadastroUsuario_MenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                cadastroUsuario_MenuItemActionPerformed(evt);
             }
         });
-        Menu.add(jMenuItem2);
+        Menu.add(cadastroUsuario_MenuItem);
 
         sair_MenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemacadastro/icones/cancel.png"))); // NOI18N
         sair_MenuItem.setMnemonic('x');
@@ -249,15 +250,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
         Pacientes.setMnemonic('e');
         Pacientes.setText("Pacientes");
 
-        cadastrar_MenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemacadastro/icones/application_form_add.png"))); // NOI18N
-        cadastrar_MenuItem.setMnemonic('t');
-        cadastrar_MenuItem.setText("Cadastrar");
-        cadastrar_MenuItem.addActionListener(new java.awt.event.ActionListener() {
+        cadastrarPessoa_MenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemacadastro/icones/application_form_add.png"))); // NOI18N
+        cadastrarPessoa_MenuItem.setMnemonic('t');
+        cadastrarPessoa_MenuItem.setText("Cadastrar");
+        cadastrarPessoa_MenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cadastrar_MenuItemActionPerformed(evt);
+                cadastrarPessoa_MenuItemActionPerformed(evt);
             }
         });
-        Pacientes.add(cadastrar_MenuItem);
+        Pacientes.add(cadastrarPessoa_MenuItem);
 
         procurar_MenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemacadastro/icones/application_form_magnify.png"))); // NOI18N
         procurar_MenuItem.setMnemonic('p');
@@ -273,8 +274,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jMenu1.setText("Medicos");
 
-        jMenuItem3.setText("Cadastrar");
-        jMenu1.add(jMenuItem3);
+        cadastrarMedico_MenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemacadastro/icones/user_gray.png"))); // NOI18N
+        cadastrarMedico_MenuItem.setText("Cadastrar");
+        cadastrarMedico_MenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadastrarMedico_MenuItemActionPerformed(evt);
+            }
+        });
+        jMenu1.add(cadastrarMedico_MenuItem);
 
         menuBar.add(jMenu1);
 
@@ -313,7 +320,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 429, Short.MAX_VALUE)
+            .addComponent(desktopPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 429, Short.MAX_VALUE)
         );
 
         pack();
@@ -323,13 +330,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_sair_MenuItemActionPerformed
 
-    private void cadastrar_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrar_MenuItemActionPerformed
+    private void cadastrarPessoa_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarPessoa_MenuItemActionPerformed
 
         TelaInternaCadastroDePessoas cadastrar = new TelaInternaCadastroDePessoas();
         //cadastrar.setVisible(true);
         desktopPane.add(cadastrar);
 
-    }//GEN-LAST:event_cadastrar_MenuItemActionPerformed
+    }//GEN-LAST:event_cadastrarPessoa_MenuItemActionPerformed
 
     private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
         // TODO add your handling code here:
@@ -348,18 +355,25 @@ public class TelaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_desenvolvedores_MenuItemActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void cadastroUsuario_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroUsuario_MenuItemActionPerformed
         TelaInternaCadastoUsuario cadastroUsuario = new TelaInternaCadastoUsuario();
         desktopPane.add(cadastroUsuario);
         //cadastroUsuario.setVisible(true);
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_cadastroUsuario_MenuItemActionPerformed
+
+    private void cadastrarMedico_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarMedico_MenuItemActionPerformed
+        TelaInternaCadastroMedico cadastroMedico = new TelaInternaCadastroMedico();
+        desktopPane.add(cadastroMedico);
+    }//GEN-LAST:event_cadastrarMedico_MenuItemActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu Menu;
     private javax.swing.JMenu Pacientes;
     private javax.swing.JInternalFrame Procurar_JInternalFrame;
     private javax.swing.JMenu Sobre;
-    private javax.swing.JMenuItem cadastrar_MenuItem;
+    private javax.swing.JMenuItem cadastrarMedico_MenuItem;
+    private javax.swing.JMenuItem cadastrarPessoa_MenuItem;
+    private javax.swing.JMenuItem cadastroUsuario_MenuItem;
     private javax.swing.JMenuItem desenvolvedores_MenuItem;
     private javax.swing.JDesktopPane desktopPane;
     private javax.swing.JButton jButton5;
@@ -369,8 +383,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;

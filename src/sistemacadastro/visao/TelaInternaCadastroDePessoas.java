@@ -27,30 +27,37 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame imp
     Pessoa pessoa = new Pessoa();
     Endereco endereco = new Endereco();
     String sexo;
-    
+
     public TelaInternaCadastroDePessoas() {
         this.setVisible(true);
         initComponents();
     }
 
-    public Pessoa setInformacoesPessoa(){
-     
+    public Pessoa setInformacoesPessoa() {
         pessoa.setNome(txtNomeCliente.getText());
         pessoa.setCpf(txtCpfCliente.getText());
         pessoa.setRg(txtRgCliente.getText());
         pessoa.setSexo(this.sexo);
-        
+        limparCampos();
         return pessoa;
     }
-    
-    public Endereco setInformacoesEndereco(){
-        
+
+    public Endereco setInformacoesEndereco() {
         endereco.setRua(txtRuaCliente.getText());
         endereco.setCep(txtCepCliente.getText());
         endereco.setCidade(txtCidadeCliente.getText());
         endereco.setEstado(txtEstadoCliente.getSelectedItem().toString());
-        
+        limparCampos();
         return endereco;
+    }
+
+    public void limparCampos() {
+        txtNomeCliente.setText("");
+        txtCpfCliente.setText("");
+        txtRgCliente.setText("");
+        txtRuaCliente.setText("");
+        txtCepCliente.setText("");
+        txtCidadeCliente.setText("");
     }
 
     /**
@@ -62,12 +69,20 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame imp
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButtonSalvar = new javax.swing.JButton();
+        jButtonExcluir = new javax.swing.JButton();
+        jButtonEditar = new javax.swing.JButton();
+        jButtonBuscar = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        txtNomeCliente = new javax.swing.JTextField();
-        txtCpfCliente = new javax.swing.JTextField();
         txtRgCliente = new javax.swing.JTextField();
+        txtCpfCliente = new javax.swing.JTextField();
+        txtNomeCliente = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        checkBoxMasculino = new javax.swing.JCheckBox();
+        checkBoxFeminino = new javax.swing.JCheckBox();
         jPanel1 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -75,28 +90,112 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame imp
         txtRuaCliente = new javax.swing.JTextField();
         txtCidadeCliente = new javax.swing.JTextField();
         txtCepCliente = new javax.swing.JTextField();
-        txtEstadoCliente = new javax.swing.JComboBox<String>();
+        txtEstadoCliente = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
-        checkBoxMasculino = new javax.swing.JCheckBox();
-        checkBoxFeminino = new javax.swing.JCheckBox();
-        jButtonSalvar = new javax.swing.JButton();
-        jButtonExcluir = new javax.swing.JButton();
-        jButtonEditar = new javax.swing.JButton();
-        jButtonBuscar = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
-        jButtonSair = new javax.swing.JButton();
+
+        setClosable(true);
+        setTitle("Cadastro de Paciente");
+
+        jButtonSalvar.setText("Salvar");
+        jButtonSalvar.setActionCommand("Salvar");
+        jButtonSalvar.addActionListener(listener);
+        jButtonSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSalvarActionPerformed(evt);
+            }
+        });
+
+        jButtonExcluir.setText("Excluir");
+
+        jButtonEditar.setText("Editar");
+
+        jButtonBuscar.setText("Buscar");
+        jButtonBuscar.setActionCommand("Buscar");
+        jButtonBuscar.addActionListener(listener);
+        jButtonBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonBuscarActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setText("Data e Hora: *****");
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Paciente"));
 
         jLabel1.setText("Nome:");
 
         jLabel2.setText("CPF:");
-
-        jLabel3.setText("RG:");
 
         txtRgCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtRgClienteActionPerformed(evt);
             }
         });
+
+        jLabel3.setText("RG:");
+
+        checkBoxMasculino.setText("Masculino");
+        checkBoxMasculino.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkBoxMasculinoActionPerformed(evt);
+            }
+        });
+
+        checkBoxFeminino.setText("Feminino");
+        checkBoxFeminino.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkBoxFemininoActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtCpfCliente))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGap(23, 23, 23)
+                                .addComponent(txtRgCliente))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(checkBoxMasculino)
+                        .addGap(11, 11, 11)
+                        .addComponent(checkBoxFeminino)))
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(txtNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(txtCpfCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtRgCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(checkBoxMasculino)
+                    .addComponent(checkBoxFeminino))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Endereço"));
 
@@ -185,60 +284,8 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame imp
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtEstadoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
-
-        checkBoxMasculino.setText("Masculino");
-        checkBoxMasculino.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                checkBoxMasculinoActionPerformed(evt);
-            }
-        });
-
-        checkBoxFeminino.setText("Feminino");
-        checkBoxFeminino.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                checkBoxFemininoActionPerformed(evt);
-            }
-        });
-
-        jButtonSalvar.setText("Salvar");
-        jButtonSalvar.setActionCommand("Salvar");
-        jButtonSalvar.addActionListener(listener);
-        jButtonSalvar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSalvarActionPerformed(evt);
-            }
-        });
-
-        jButtonExcluir.setText("Excluir");
-
-        jButtonEditar.setText("Editar");
-
-        jButtonBuscar.setText("Buscar");
-        jButtonBuscar.setActionCommand("Buscar");
-        jButtonBuscar.addActionListener(listener);
-        jButtonBuscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonBuscarActionPerformed(evt);
-            }
-        });
-
-        jLabel8.setText("Data e Hora: *****");
-
-        jButtonSair.setText("Sair");
-        jButtonSair.setActionCommand("Sair");
-        jButtonSair.addActionListener(listener);
-        jButtonSair.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButtonSairMouseClicked(evt);
-            }
-        });
-        jButtonSair.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSairActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -246,83 +293,42 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame imp
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtCpfCliente))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(23, 23, 23)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButtonEditar)
-                                    .addComponent(jButtonSalvar))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButtonExcluir)
-                                    .addComponent(jButtonBuscar))
-                                .addGap(38, 38, 38))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(checkBoxMasculino)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(checkBoxFeminino)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(txtRgCliente))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 83, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonSair, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(47, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButtonSalvar)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonEditar)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonExcluir)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonBuscar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(53, 53, 53)))
-                .addGap(22, 22, 22))
+                        .addGap(56, 56, 56))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(txtNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(txtCpfCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtRgCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(checkBoxMasculino)
-                            .addComponent(checkBoxFeminino)))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButtonSalvar)
-                            .addComponent(jButtonExcluir)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(jButtonSair)))
-                .addGap(22, 22, 22)
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonSalvar)
                     .addComponent(jButtonEditar)
+                    .addComponent(jButtonExcluir)
                     .addComponent(jButtonBuscar)
                     .addComponent(jLabel8))
-                .addContainerGap(59, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
-        setBounds(0, 0, 647, 375);
+        setBounds(0, 0, 647, 269);
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtRgClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRgClienteActionPerformed
@@ -334,35 +340,10 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame imp
     }//GEN-LAST:event_txtEstadoClienteActionPerformed
 
     private void jButtonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarActionPerformed
-//        Arquivo arquivo = new Arquivo();
-//        String checkBox = null, conteudo;
-//        if (checkBoxFeminino.isSelected()) {
-//            checkBox = checkBoxFeminino.getText();
-//        } else if (checkBoxMasculino.isSelected()) {
-//            checkBox = checkBoxMasculino.getText();
-//        }
-//        conteudo = txtNomeCliente.getText() + " ; "
-//                + txtCpfCliente.getText() + " ; "
-//                + txtRgCliente.getText() + " ; "
-//                + checkBox + " ; "
-//                + txtRgCliente.getText() + " ; "
-//                + txtRuaCliente.getText() + " ; "
-//                + txtCidadeCliente.getText() + " ; "
-//                + txtCepCliente.getText() + " ; "
-//                + jComboBox1.getSelectedItem();
-//        arquivo.gravarArquivo(txtNomeCliente.getText(), conteudo);
+
     }//GEN-LAST:event_jButtonSalvarActionPerformed
 
-    private void jButtonSairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonSairMouseClicked
-
-    }//GEN-LAST:event_jButtonSairMouseClicked
-
-    private void jButtonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonSairActionPerformed
-
     private void checkBoxMasculinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBoxMasculinoActionPerformed
-        // TODO add your handling code here:
         if (checkBoxMasculino.isSelected()) {
             checkBoxFeminino.setSelected(false);
             sexo = "Masculino";
@@ -370,7 +351,6 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame imp
     }//GEN-LAST:event_checkBoxMasculinoActionPerformed
 
     private void checkBoxFemininoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBoxFemininoActionPerformed
-        // TODO add your handling code here:
         if (checkBoxFeminino.isSelected()) {
             checkBoxMasculino.setSelected(false);
             sexo = "Feminio";
@@ -378,7 +358,6 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame imp
     }//GEN-LAST:event_checkBoxFemininoActionPerformed
 
     private void jButtonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_jButtonBuscarActionPerformed
 
 
@@ -388,7 +367,6 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame imp
     private javax.swing.JButton jButtonBuscar;
     private javax.swing.JButton jButtonEditar;
     private javax.swing.JButton jButtonExcluir;
-    private javax.swing.JButton jButtonSair;
     private javax.swing.JButton jButtonSalvar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -399,6 +377,7 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame imp
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField txtCepCliente;
     private javax.swing.JTextField txtCidadeCliente;
     private javax.swing.JTextField txtCpfCliente;

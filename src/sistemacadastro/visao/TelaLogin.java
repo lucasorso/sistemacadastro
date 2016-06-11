@@ -64,6 +64,7 @@ public class TelaLogin extends javax.swing.JFrame {
         password_jPasswordField = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Login");
 
         entrar_jButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemacadastro/icones/accept.png"))); // NOI18N
         entrar_jButton.setText("Entrar");
