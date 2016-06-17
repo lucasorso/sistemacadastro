@@ -353,7 +353,7 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame imp
     private void checkBoxFemininoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBoxFemininoActionPerformed
         if (checkBoxFeminino.isSelected()) {
             checkBoxMasculino.setSelected(false);
-            sexo = "Feminio";
+            sexo = "Feminino";
         }
     }//GEN-LAST:event_checkBoxFemininoActionPerformed
 
