@@ -331,11 +331,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_sair_MenuItemActionPerformed
 
     private void cadastrarPessoa_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarPessoa_MenuItemActionPerformed
-
         TelaInternaCadastroDePessoas cadastrar = new TelaInternaCadastroDePessoas();
-        //cadastrar.setVisible(true);
         desktopPane.add(cadastrar);
-
     }//GEN-LAST:event_cadastrarPessoa_MenuItemActionPerformed
 
     private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed

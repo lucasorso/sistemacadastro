@@ -73,5 +73,6 @@ public class ListenerTelaInternaCadastroDePessoas implements ActionListener{
                 Logger.getLogger(ListenerTelaInternaCadastroUsuario.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+         
     }
 }

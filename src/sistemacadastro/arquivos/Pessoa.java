@@ -11,10 +11,25 @@ package sistemacadastro.arquivos;
  */
 public class Pessoa {
     
+    private int codigo;
     private String nome;
     private String cpf;
     private String rg;
     private String sexo;
+    
+    /**
+     * @return the codigo
+     */
+    public int getCodigo(){
+        return codigo;
+    }
+    
+     /**
+     * @param codigo the nome to set
+     */
+    public void setCodigo(int codigo){
+        this.codigo = codigo;
+    }
 
     /**
      * @return the nome
