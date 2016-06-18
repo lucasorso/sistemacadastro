@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package sistemacadastro.visao;
 
 import sistemacadastro.arquivos.Medico;
@@ -40,7 +36,6 @@ public class TelaInternaCadastroMedico extends javax.swing.JInternalFrame {
         jButtonSalvar = new javax.swing.JButton();
         jButtonExcluir = new javax.swing.JButton();
         jButtonEditar = new javax.swing.JButton();
-        jButtonBuscar = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -80,15 +75,6 @@ public class TelaInternaCadastroMedico extends javax.swing.JInternalFrame {
         jButtonExcluir.setText("Excluir");
 
         jButtonEditar.setText("Editar");
-
-        jButtonBuscar.setText("Buscar");
-        jButtonBuscar.setActionCommand("Buscar");
-        jButtonBuscar.addActionListener(listener);
-        jButtonBuscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonBuscarActionPerformed(evt);
-            }
-        });
 
         jLabel8.setText("Data e Hora: *****");
 
@@ -296,8 +282,6 @@ public class TelaInternaCadastroMedico extends javax.swing.JInternalFrame {
                         .addComponent(jButtonEditar)
                         .addGap(18, 18, 18)
                         .addComponent(jButtonExcluir)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButtonBuscar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(56, 56, 56))))
@@ -314,9 +298,8 @@ public class TelaInternaCadastroMedico extends javax.swing.JInternalFrame {
                     .addComponent(jButtonSalvar)
                     .addComponent(jButtonEditar)
                     .addComponent(jButtonExcluir)
-                    .addComponent(jButtonBuscar)
                     .addComponent(jLabel8))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         pack();
@@ -325,10 +308,6 @@ public class TelaInternaCadastroMedico extends javax.swing.JInternalFrame {
     private void jButtonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarActionPerformed
 
     }//GEN-LAST:event_jButtonSalvarActionPerformed
-
-    private void jButtonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarActionPerformed
-
-    }//GEN-LAST:event_jButtonBuscarActionPerformed
 
     private void txtRgMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRgMedicoActionPerformed
     }//GEN-LAST:event_txtRgMedicoActionPerformed
@@ -345,7 +324,6 @@ public class TelaInternaCadastroMedico extends javax.swing.JInternalFrame {
     private void txtEmailMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailMedicoActionPerformed
     }//GEN-LAST:event_txtEmailMedicoActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonBuscar;
     private javax.swing.JButton jButtonEditar;
     private javax.swing.JButton jButtonExcluir;
     private javax.swing.JButton jButtonSalvar;

@@ -50,8 +50,10 @@ public class TelaInternaCadastoUsuario extends javax.swing.JInternalFrame {
         setClosable(true);
         setTitle("Cadastro de Usuario");
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemacadastro/icones/user.png"))); // NOI18N
         jLabel1.setText("Usuario:");
 
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemacadastro/icones/key_add.png"))); // NOI18N
         jLabel2.setText("Senha:");
 
         txtNomeUsuario.addActionListener(new java.awt.event.ActionListener() {
@@ -66,6 +68,7 @@ public class TelaInternaCadastoUsuario extends javax.swing.JInternalFrame {
             }
         });
 
+        jButton1Salvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemacadastro/icones/accept.png"))); // NOI18N
         jButton1Salvar.setText("Salvar");
         jButton1Salvar.setActionCommand("Salvar");
         jButton1Salvar.addActionListener(listener);
@@ -83,7 +86,7 @@ public class TelaInternaCadastoUsuario extends javax.swing.JInternalFrame {
                             .addComponent(jLabel2))
                         .addGap(4, 4, 4)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtSenhaUsuario)
+                            .addComponent(txtSenhaUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
                             .addComponent(txtNomeUsuario)))
                     .addGroup(javax.swing.GroupLayout.Alignment.CENTER, layout.createSequentialGroup()
                         .addGap(57, 57, 57)
@@ -102,9 +105,9 @@ public class TelaInternaCadastoUsuario extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(jLabel2)
                     .addComponent(txtSenhaUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(35, 35, 35)
                 .addComponent(jButton1Salvar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
 
         pack();

@@ -22,3 +22,10 @@ Fri Jun 10 21:30:23 BRT 2016 : Último login por Lucas Orso;System.123
 Fri Jun 10 21:31:08 BRT 2016 : Último login por Lucas Orso;System.123 
 Fri Jun 10 21:31:34 BRT 2016 : Último login por Lucas Orso;System.123 
 Fri Jun 10 21:31:38 BRT 2016 : Cadastrou Medico 
+Fri Jun 17 21:07:44 BRT 2016 : Novo login gregori;gregori
+Fri Jun 17 21:09:12 BRT 2016 : Novo login greg;greg
+Fri Jun 17 21:11:06 BRT 2016 : Novo login greg;greg
+Fri Jun 17 21:22:03 BRT 2016 : Novo login greg;greg
+Fri Jun 17 21:22:41 BRT 2016 : Novo login g;g
+Fri Jun 17 21:41:12 BRT 2016 : Novo login greg;greg
+Fri Jun 17 21:43:04 BRT 2016 : Novo login greg;greg

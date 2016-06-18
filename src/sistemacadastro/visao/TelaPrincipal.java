@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import static java.util.Collections.list;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -223,6 +224,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         desktopPane.add(Procurar_JInternalFrame);
         Procurar_JInternalFrame.setBounds(120, 20, 450, 350);
 
+        Menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemacadastro/icones/computer.png"))); // NOI18N
         Menu.setMnemonic('f');
         Menu.setText("Sistema");
 
@@ -247,6 +249,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         menuBar.add(Menu);
 
+        Pacientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemacadastro/icones/group.png"))); // NOI18N
         Pacientes.setMnemonic('e');
         Pacientes.setText("Pacientes");
 
@@ -272,6 +275,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         menuBar.add(Pacientes);
 
+        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemacadastro/icones/user_suit.png"))); // NOI18N
         jMenu1.setText("Medicos");
 
         cadastrarMedico_MenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemacadastro/icones/user_gray.png"))); // NOI18N
@@ -285,6 +289,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         menuBar.add(jMenu1);
 
+        Sobre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemacadastro/icones/application.png"))); // NOI18N
         Sobre.setMnemonic('h');
         Sobre.setText("Sobre");
 
@@ -348,11 +353,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_procurar_MenuItemActionPerformed
 
     private void sobreSistema_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sobreSistema_MenuItemActionPerformed
-        // TODO add your handling code here:
+
+        TelaInternaSobreSistema sobre = new TelaInternaSobreSistema();
+        desktopPane.add(sobre);
+        sobre.setVisible(true);
     }//GEN-LAST:event_sobreSistema_MenuItemActionPerformed
 
     private void desenvolvedores_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_desenvolvedores_MenuItemActionPerformed
-        // TODO add your handling code here:
+        TelainternaDesenvolvedores desenvolvedores = new TelainternaDesenvolvedores();
+        desktopPane.add(desenvolvedores);
+        desenvolvedores.setVisible(true);
+        
     }//GEN-LAST:event_desenvolvedores_MenuItemActionPerformed
 
     private void cadastroUsuario_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroUsuario_MenuItemActionPerformed
