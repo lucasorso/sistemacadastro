@@ -6,7 +6,9 @@
 package sistemacadastro.arquivos;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 import javax.swing.JOptionPane;
 
 /**
@@ -28,9 +30,12 @@ public class LerUsuario extends Arquivo {
                 sb.append("\n");
             }
             return sb.toString();
-        } catch (java.io.IOException ex) {
+        } catch (FileNotFoundException ex) {
+            JOptionPane.showConfirmDialog(this, "Não foi encotrado, Será criado um novo arquivo");
             ex.printStackTrace();
-        } 
+        }  catch(IOException ex){
+            ex.printStackTrace();
+        }
         return null;
     }
     

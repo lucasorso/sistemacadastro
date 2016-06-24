@@ -12,5 +12,6 @@ package sistemacadastro.exceptions;
 public class ExceptionGravarArquivo extends Exception{
 
     public ExceptionGravarArquivo() {
+       
     }
 }
