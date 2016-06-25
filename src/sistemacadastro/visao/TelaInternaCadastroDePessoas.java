@@ -37,7 +37,6 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame {
         endereco.setCep(txtCepCliente.getText());
         endereco.setCidade(txtCidade.getText());
         endereco.setEstado(comboEstadoCliente.getSelectedItem().toString());
-       // endereco.set(Integer.parseInt(jTextFieldCod.getText()));
         limparCampos();
         return endereco;
     }
