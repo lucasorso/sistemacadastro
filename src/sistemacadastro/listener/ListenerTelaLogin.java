@@ -15,6 +15,7 @@ import sistemacadastro.arquivos.GravarUsuario;
 import sistemacadastro.arquivos.LerUsuario;
 import sistemacadastro.arquivos.Usuario;
 import sistemacadastro.exceptions.ExceptionGravarArquivo;
+import sistemacadastro.exceptions.ExceptionLerArquivo;
 import sistemacadastro.filestream.WriteToFile;
 import sistemacadastro.visao.TelaLogin;
 import sistemacadastro.visao.TelaPrincipal;
@@ -48,7 +49,7 @@ public class ListenerTelaLogin implements ActionListener {
                     WriteToFile.escrever("Novo login " + (cadUser.getNome() + ";" + cadUser.getSenha()), "Logs.txt");
                 } catch (IOException ex) {
                     Logger.getLogger(ListenerTelaLogin.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (ExceptionGravarArquivo ex) {
+                } catch (ExceptionLerArquivo ex) {
                     Logger.getLogger(ListenerTelaLogin.class.getName()).log(Level.SEVERE, null, ex);
                 }
             } else {
@@ -58,7 +59,7 @@ public class ListenerTelaLogin implements ActionListener {
                     //JOptionPane.showMessageDialog(null, "Por equanto nada", " Usuário ou senha inválidos", JOptionPane.INFORMATION_MESSAGE);
                 } catch (IOException ex) {
                     Logger.getLogger(ListenerTelaLogin.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (ExceptionGravarArquivo ex) {
+                } catch (ExceptionLerArquivo ex) {
                     Logger.getLogger(ListenerTelaLogin.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }

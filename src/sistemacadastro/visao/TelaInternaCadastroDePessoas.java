@@ -26,7 +26,7 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame {
         pessoa.setNome(txtNomeCliente.getText());
         pessoa.setCpf(txtCpfCliente.getText());
         pessoa.setRg(txtRgCliente.getText());
-        pessoa.setCodigo(Integer.parseInt(jTextFieldCod.getText()));
+//        pessoa.setCodigo(Integer.parseInt(jTextFieldCod.getText()));
         pessoa.setSexo(this.sexo);
         limparCampos();
         return pessoa;

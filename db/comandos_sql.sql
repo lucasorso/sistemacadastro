@@ -49,6 +49,17 @@ cep varchar (30) not null,
 estado varchar(30) not null
 );
 
+// medico
+create table medico (
+id integer identity primary key, 
+nome varchar(30) not null,
+cpf varchar(30) not null, 
+rg varchar (30) not null, 
+especializacao varchar(30) not null,
+email varchar(30) not null,
+crm varchar(30) not null
+);
+
 
 // Criação de tabela de tabela de Relacionamento 
 // Exemplo Professor Giba

@@ -74,6 +74,7 @@ public class ControlePessoaDao {
             String sql = "insert into pessoa_endereco (id,id) values(?,?)";
             ps.setInt(1, idPes);
             ps.setInt(2, idEnd);
+            ps.execute();
             
             conn.commit();
         }catch(SQLException e) {

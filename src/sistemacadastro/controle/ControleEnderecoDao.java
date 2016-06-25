@@ -3,6 +3,7 @@ package sistemacadastro.controle;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 import sistemacadastro.arquivos.Endereco;
 import sistemacadastro.arquivos.Pessoa;
 
@@ -18,6 +19,7 @@ public class ControleEnderecoDao {
         try {
             conn = Conexao.getConnection();
             String sql = "insert into endereco (rua,cidade,cep,estado) values(?,?,?,?)";
+            JOptionPane.showMessageDialog(null, end.getCep());
             ps = conn.prepareStatement(sql);
             ps.setString(1, end.getRua());
             ps.setString(2, end.getCidade());
