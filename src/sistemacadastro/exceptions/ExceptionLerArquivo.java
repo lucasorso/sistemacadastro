@@ -9,6 +9,10 @@ package sistemacadastro.exceptions;
  *
  * @author Lucas
  */
-public class ExceptionLerArquivo extends Exception{
-    
+public class ExceptionLerArquivo extends Exception {
+
+    public ExceptionLerArquivo() {
+        super("Erro ao ler arquivo");
+    }
+
 }
