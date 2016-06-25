@@ -1,7 +1,0 @@
-CREATE USER SA PASSWORD "" ADMIN
-/*C1*/SET SCHEMA PUBLIC
-CONNECT USER SA
-CREATE TABLE pessoa(\u000acodigo integer not null,\u000apessoa varchar (30) not null,\u000acpf varchar (15) not null,\u000arg varchar (15) not null,\u000asexo varchar (15) not null\u000a)
-/*C2*/SET SCHEMA PUBLIC
-CONNECT USER SA
-/*C1*/DISCONNECT

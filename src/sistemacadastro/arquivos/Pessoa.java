@@ -11,7 +11,7 @@ package sistemacadastro.arquivos;
  */
 public class Pessoa {
     
-    private int codigo;
+    private int id;
     private String nome;
     private String cpf;
     private String rg;
@@ -21,14 +21,14 @@ public class Pessoa {
      * @return the codigo
      */
     public int getCodigo(){
-        return codigo;
+        return id;
     }
     
      /**
      * @param codigo the nome to set
      */
     public void setCodigo(int codigo){
-        this.codigo = codigo;
+        this.id = codigo;
     }
 
     /**

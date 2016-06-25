@@ -10,6 +10,8 @@ package sistemacadastro.arquivos;
  * @author comp1
  */
 public class Endereco {
+    
+    private int id;
     private String rua;
     private String cidade;
     private String cep;
