@@ -9,9 +9,10 @@ package sistemacadastro.exceptions;
  *
  * @author Lucas
  */
-public class ExceptionGravarArquivo extends Exception{
+public class ExceptionGravarArquivo extends Exception {
 
     public ExceptionGravarArquivo() {
-       
+        super("Erro ao gravar arquivo");
+
     }
 }
