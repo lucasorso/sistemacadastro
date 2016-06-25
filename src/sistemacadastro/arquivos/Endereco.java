@@ -16,6 +16,7 @@ public class Endereco {
     private String cidade;
     private String cep;
     private String estado;
+
     /**
      * @return the rua
      */

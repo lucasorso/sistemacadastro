@@ -120,16 +120,16 @@ Fri Jun 17 21:22:03 BRT 2016 : Novo login greg;greg
 Fri Jun 17 21:22:41 BRT 2016 : Novo login g;g
 Fri Jun 17 21:41:12 BRT 2016 : Novo login greg;greg
 Fri Jun 17 21:43:04 BRT 2016 : Novo login greg;greg
-Fri Jun 24 19:50:16 BRT 2016 : Último login por greg;greg 
+Fri Jun 24 19:50:16 BRT 2016 : ï¿½ltimo login por greg;greg 
 Fri Jun 24 19:50:40 BRT 2016 : Cadastrou Paciente 
-Fri Jun 24 19:51:13 BRT 2016 : Último login por greg;greg 
-Fri Jun 24 21:37:34 BRT 2016 : Último login por greg;greg 
-Fri Jun 24 21:39:32 BRT 2016 : Último login por greg;greg 
-Fri Jun 24 21:41:44 BRT 2016 : Último login por greg;greg 
-Fri Jun 24 21:47:18 BRT 2016 : Último login por greg;greg 
+Fri Jun 24 19:51:13 BRT 2016 : ï¿½ltimo login por greg;greg 
+Fri Jun 24 21:37:34 BRT 2016 : ï¿½ltimo login por greg;greg 
+Fri Jun 24 21:39:32 BRT 2016 : ï¿½ltimo login por greg;greg 
+Fri Jun 24 21:41:44 BRT 2016 : ï¿½ltimo login por greg;greg 
+Fri Jun 24 21:47:18 BRT 2016 : ï¿½ltimo login por greg;greg 
 Fri Jun 24 21:47:24 BRT 2016 : Cadastrou Paciente 
 Fri Jun 24 21:48:32 BRT 2016 : Cadastrou Paciente 
-Fri Jun 24 21:57:01 BRT 2016 : Último login por greg;greg 
+Fri Jun 24 21:57:01 BRT 2016 : ï¿½ltimo login por greg;greg 
 Fri Jun 24 21:59:19 BRT 2016 : Cadastrou Paciente 
-Fri Jun 24 21:59:23 BRT 2016 : Último login por greg;greg 
-Fri Jun 24 22:00:43 BRT 2016 : Último login por greg;greg 
+Fri Jun 24 21:59:23 BRT 2016 : ï¿½ltimo login por greg;greg 
+Fri Jun 24 22:00:43 BRT 2016 : ï¿½ltimo login por greg;greg 
