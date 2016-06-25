@@ -15,6 +15,8 @@ import javax.swing.JOptionPane;
 import sistemacadastro.arquivos.Arquivo;
 import sistemacadastro.arquivos.Endereco;
 import sistemacadastro.arquivos.Pessoa;
+import sistemacadastro.controle.ControleEnderecoDao;
+import sistemacadastro.controle.ControlePessoaDao;
 import sistemacadastro.filestream.WriteToFile;
 import sistemacadastro.visao.TelaInternaCadastroDePessoas;
 import sistemacadastro.visao.TelaInternaProcurar;
@@ -29,6 +31,8 @@ public class ListenerTelaInternaCadastroDePessoas implements ActionListener{
     private TelaInternaCadastroDePessoas cadP;
     private Pessoa pessoa = new Pessoa();
     private Endereco endereco = new Endereco();
+    private ControlePessoaDao controlPes = new ControlePessoaDao();
+    private ControleEnderecoDao controlEnd = new ControleEnderecoDao();
 
     public ListenerTelaInternaCadastroDePessoas(TelaInternaCadastroDePessoas aThis) {
         this.cadP = aThis;
@@ -42,15 +46,24 @@ public class ListenerTelaInternaCadastroDePessoas implements ActionListener{
             pessoa = cadP.setInformacoesPessoa();
             endereco = cadP.setInformacoesEndereco();
             
+            controlPes.insert(pessoa);
+            controlEnd.insert(endereco);
+            controlPes.relaciona(pessoa, endereco);
+            
+            
             try {
                 WriteToFile.escrever("Cadastrou Paciente ", "Logs.txt");
             } catch (IOException ex) {
                 Logger.getLogger(ListenerTelaInternaCadastroUsuario.class.getName()).log(Level.SEVERE, null, ex);
             }
-            JOptionPane.showMessageDialog(null, pessoa.getNome() + " " +  pessoa.getCpf() + " " +  pessoa.getRg() + " " + pessoa.getSexo()
-             + " " + endereco.getRua() + " " + endereco.getCep() + " " + endereco.getCidade() + " " + endereco.getEstado());
+            
         }
         if ("Editar".equals(e.getActionCommand())) {
+            pessoa = cadP.setInformacoesPessoa();
+            endereco = cadP.setInformacoesEndereco();
+            
+            controlPes.update(pessoa);
+            
             try {
                 WriteToFile.escrever("Editou Paciente ","Logs.txt");
             } catch (IOException ex) {

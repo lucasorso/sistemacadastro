@@ -120,3 +120,6 @@ Fri Jun 17 21:22:03 BRT 2016 : Novo login greg;greg
 Fri Jun 17 21:22:41 BRT 2016 : Novo login g;g
 Fri Jun 17 21:41:12 BRT 2016 : Novo login greg;greg
 Fri Jun 17 21:43:04 BRT 2016 : Novo login greg;greg
+Fri Jun 24 19:50:16 BRT 2016 : Último login por greg;greg 
+Fri Jun 24 19:50:40 BRT 2016 : Cadastrou Paciente 
+Fri Jun 24 19:51:13 BRT 2016 : Último login por greg;greg 

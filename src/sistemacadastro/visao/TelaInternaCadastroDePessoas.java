@@ -15,7 +15,6 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame {
     private ListenerTelaInternaCadastroDePessoas listener = new ListenerTelaInternaCadastroDePessoas(this);
     Pessoa pessoa = new Pessoa();
     Endereco endereco = new Endereco();
-    int codigo = 0 ;
     String sexo;
 
     public TelaInternaCadastroDePessoas() {
@@ -27,8 +26,8 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame {
         pessoa.setNome(txtNomeCliente.getText());
         pessoa.setCpf(txtCpfCliente.getText());
         pessoa.setRg(txtRgCliente.getText());
+        pessoa.setCodigo(Integer.parseInt(jTextFieldCod.getText()));
         pessoa.setSexo(this.sexo);
-        pessoa.setCodigo(codigo++);
         limparCampos();
         return pessoa;
     }
@@ -38,6 +37,7 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame {
         endereco.setCep(txtCepCliente.getText());
         endereco.setCidade(txtCidade.getText());
         endereco.setEstado(comboEstadoCliente.getSelectedItem().toString());
+        endereco.set(Integer.parseInt(jTextFieldCod.getText()));
         limparCampos();
         return endereco;
     }
@@ -85,6 +85,7 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame {
         setClosable(true);
 
         jButtonSalvar.setText("Salvar");
+        jButtonSalvar.setEnabled(false);
         jButtonSalvar.setActionCommand("Salvar");
         jButtonSalvar.addActionListener(listener);
         jButtonSalvar.addActionListener(new java.awt.event.ActionListener() {
@@ -94,10 +95,13 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame {
         });
 
         jButtonExcluir.setText("Excluir");
+        jButtonExcluir.setEnabled(false);
 
         jButtonEditar.setText("Editar");
+        jButtonEditar.setEnabled(false);
 
         jButtonBuscar.setText("Buscar");
+        jButtonBuscar.setEnabled(false);
         jButtonBuscar.setActionCommand("Buscar");
         jButtonBuscar.addActionListener(listener);
         jButtonBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -114,15 +118,21 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame {
 
         jLabel2.setText("CPF:");
 
+        txtRgCliente.setEnabled(false);
         txtRgCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtRgClienteActionPerformed(evt);
             }
         });
 
+        txtCpfCliente.setEnabled(false);
+
+        txtNomeCliente.setEnabled(false);
+
         jLabel3.setText("RG:");
 
         checkBoxMasculino.setText("Masculino");
+        checkBoxMasculino.setEnabled(false);
         checkBoxMasculino.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 checkBoxMasculinoActionPerformed(evt);
@@ -130,6 +140,7 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame {
         });
 
         checkBoxFeminino.setText("Feminino");
+        checkBoxFeminino.setEnabled(false);
         checkBoxFeminino.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 checkBoxFemininoActionPerformed(evt);
@@ -199,6 +210,13 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame {
 
         jLabel6.setText("CEP:");
 
+        txtRuaCliente.setEnabled(false);
+
+        txtCidade.setEnabled(false);
+
+        txtCepCliente.setEnabled(false);
+
+        comboEstadoCliente.setEnabled(false);
         comboEstadoCliente.addItem("AL");
         comboEstadoCliente.addItem("AM");
         comboEstadoCliente.addItem("BA");
@@ -282,8 +300,6 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame {
         );
 
         jButtonNovo.setText("Novo");
-        jButtonNovo.setActionCommand("Buscar");
-        jButtonNovo.addActionListener(listener);
         jButtonNovo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonNovoActionPerformed(evt);
@@ -368,7 +384,6 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_checkBoxFemininoActionPerformed
 
     private void jButtonNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNovoActionPerformed
-        jTextFieldCod.setText(String.valueOf(codigo));
         txtNomeCliente.setEnabled(true);
         txtCepCliente.setEnabled(true);
         txtCpfCliente.setEnabled(true);
@@ -379,7 +394,7 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame {
         checkBoxFeminino.setEnabled(true);
         checkBoxMasculino.setEnabled(true);
         jButtonSalvar.setEnabled(true);
-        txtCidade.setEnabled(true);
+        txtCidade.setEnabled(true);       
         limparCampos();
     }//GEN-LAST:event_jButtonNovoActionPerformed
 
