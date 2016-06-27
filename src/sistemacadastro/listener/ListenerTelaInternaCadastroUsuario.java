@@ -13,7 +13,7 @@ import java.util.logging.Logger;
 import sistemacadastro.arquivos.Arquivo;
 import sistemacadastro.arquivos.GravarUsuario;
 import sistemacadastro.arquivos.Usuario;
-import sistemacadastro.filestream.WriteToFile;
+import sistemacadastro.filestream.GravarLogs;
 import sistemacadastro.visao.TelaInternaCadastoUsuario;
 
 /**
@@ -36,7 +36,7 @@ public class ListenerTelaInternaCadastroUsuario implements ActionListener{
             usuario = cadUser.setInfoUsuario();
             GravarUsuario arq = new GravarUsuario();
             try {
-                WriteToFile.escrever("Cadastrou Usuario ","Logs.txt");
+                GravarLogs.escrever("Cadastrou Usuario ","Logs.txt");
             } catch (IOException ex) {
                 Logger.getLogger(ListenerTelaInternaCadastroUsuario.class.getName()).log(Level.SEVERE, null, ex);
             }

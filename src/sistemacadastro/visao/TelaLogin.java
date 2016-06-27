@@ -5,51 +5,53 @@
  */
 package sistemacadastro.visao;
 
-import static java.awt.SystemColor.info;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JOptionPane;
+import java.io.File;
+import sistemacadastro.arquivos.GravarUsuario;
 import sistemacadastro.arquivos.LerUsuario;
 import sistemacadastro.arquivos.Usuario;
-import sistemacadastro.exceptions.ExceptionLerArquivo;
+import sistemacadastro.filestream.GravarLogs;
 import sistemacadastro.listener.ListenerTelaLogin;
 
 /**
  *
- * @author Gregori
+ * @author Lucas Orso, Yuti Abel, Gregori Gomes
  */
 public class TelaLogin extends javax.swing.JFrame {
 
     private ListenerTelaLogin listener = new ListenerTelaLogin(this);
     Usuario user = new Usuario();
+    LerUsuario leitor = new LerUsuario();
 
-    public Usuario setInfo() throws ExceptionLerArquivo {
-        user.setNome(login_jTextField.getText());
-        user.setSenha(password_jPasswordField.getText());
-        return user;
-    }
+    public Usuario setInfo() {
 
-    public void verificaLogin() throws ExceptionLerArquivo{
-        LerUsuario leitorAquivo;
-        leitorAquivo = new LerUsuario();
-        if (leitorAquivo.lerArquivo("login.txt") != null) {
-            String[] info = leitorAquivo.lerArquivo("login.txt").split(";");
-            user.setNome(info[0]);
-            user.setSenha(info[1]);
-            login_jTextField.setText(user.getNome());
-            password_jPasswordField.setText(user.getSenha());
-        } else {
-            throw new ExceptionLerArquivo();
+        if (login_jTextField != null || !login_jTextField.getText().equals("") && password_jPasswordField != null || password_jPasswordField.getText().equals("")) {
+            user.setNome(login_jTextField.getText());
+            user.setSenha(password_jPasswordField.getText());
+            return user;
         }
-            
+        return null;
     }
 
-    /**
-     * Creates new form Login
-     */
-    public TelaLogin() throws ExceptionLerArquivo {
+    public void verificaLogin() {
+        String[] info = leitor.lerArquivo("login.txt").split(";");
+        user.setNome(info[0]);
+        login_jTextField.setText(user.getNome());
+    }
+
+    public TelaLogin() {
         initComponents();
-        verificaLogin();
+        try {
+            File file = new File("Login.txt");
+            file.exists();
+            if (file.exists()) {
+                verificaLogin();
+            } else {
+                GravarUsuario.gravarArquivo("Login");
+                GravarLogs.escrever("Arquivo Login.txt não existe ! Será criado um novo arquivo", "Logs.txt");
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
 
     /**
@@ -145,7 +147,7 @@ public class TelaLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void entrar_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrar_jButtonActionPerformed
-          
+
     }//GEN-LAST:event_entrar_jButtonActionPerformed
 
     private void password_jPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_password_jPasswordFieldActionPerformed
@@ -180,16 +182,10 @@ public class TelaLogin extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    new TelaLogin().setVisible(true);
-                } catch (ExceptionLerArquivo ex) {
-                    Logger.getLogger(TelaLogin.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            /*awt.EventQueue.invokeLater(() ->*/     new TelaLogin().setVisible(true);
         });
-    }
+    }/*     /*awt.EventQueue.invokeLater(() ->*/
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton entrar_jButton;

@@ -14,5 +14,4 @@ public class ExceptionLerArquivo extends Exception {
     public ExceptionLerArquivo() {
         super("Erro ao ler arquivo");
     }
-
 }

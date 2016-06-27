@@ -10,7 +10,7 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import sistemacadastro.filestream.WriteToFile;
+import sistemacadastro.filestream.GravarLogs;
 import sistemacadastro.visao.TelaInternaProcurar;
 
 /**
@@ -29,7 +29,7 @@ public class ListenerTelaInternaProcurar implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if ("Buscar".equals(e.getActionCommand())) {
             try {
-                WriteToFile.escrever("Buscou Paciente ","Logs.txt");
+                GravarLogs.escrever("Buscou Paciente ","Logs.txt");
             } catch (IOException ex) {
                 Logger.getLogger(ListenerTelaInternaCadastroUsuario.class.getName()).log(Level.SEVERE, null, ex);
             }

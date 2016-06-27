@@ -15,6 +15,20 @@ public class Usuario {
    private String nome;
    private String senha;
 
+   /**
+     * @return the id
+     */
+   public int getId(){
+       return id;
+   }
+   
+   /**
+     * @param id the id to set id
+     */
+   public void setId(int id){
+       this.id = id;
+   }
+   
     /**
      * @return the nome
      */

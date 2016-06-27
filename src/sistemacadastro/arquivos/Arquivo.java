@@ -63,7 +63,7 @@ public class Arquivo extends JFrame{
             bufferedWriter = new BufferedWriter(fileWriter);
             bufferedWriter.write(textoArquivo);
             bufferedWriter.flush();
-//Se chegou ate essa linha, conseguiu salvar o arquivo com sucesso.
+            //Se chegou ate essa linha, conseguiu salvar o arquivo com sucesso.
             JOptionPane.showMessageDialog(null, "Salvo com sucesso");
         } catch (java.io.IOException ex) {
             JOptionPane.showMessageDialog(null, "Erro ao salvar o arquivo: " + ex.getMessage());

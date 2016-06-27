@@ -10,24 +10,21 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JButton;
 import javax.swing.JOptionPane;
-import sistemacadastro.arquivos.Arquivo;
 import sistemacadastro.arquivos.Endereco;
 import sistemacadastro.arquivos.Pessoa;
 import sistemacadastro.controle.ControleEnderecoDao;
 import sistemacadastro.controle.ControlePessoaDao;
-import sistemacadastro.filestream.WriteToFile;
+import sistemacadastro.exceptions.ExceptionArmazenarInformacoes;
+import sistemacadastro.filestream.GravarLogs;
 import sistemacadastro.visao.TelaInternaCadastroDePessoas;
-import sistemacadastro.visao.TelaInternaProcurar;
-import sistemacadastro.visao.TelaPrincipal;
 
 /**
  *
  * @author Gregori Oliveira, Lucas Orso, Yuri Abel
  */
-public class ListenerTelaInternaCadastroDePessoas implements ActionListener{
-    
+public class ListenerTelaInternaCadastroDePessoas implements ActionListener {
+
     private TelaInternaCadastroDePessoas cadP;
     private Pessoa pessoa = new Pessoa();
     private Endereco endereco = new Endereco();
@@ -37,35 +34,42 @@ public class ListenerTelaInternaCadastroDePessoas implements ActionListener{
     public ListenerTelaInternaCadastroDePessoas(TelaInternaCadastroDePessoas aThis) {
         this.cadP = aThis;
     }
+
     @Override
     public void actionPerformed(ActionEvent e) {
-        if ("Sair".equals(e.getActionCommand())){
+        if ("Sair".equals(e.getActionCommand())) {
             cadP.dispose();
         }
         if ("Salvar".equals(e.getActionCommand())) {
-            pessoa = cadP.setInformacoesPessoa();
-            endereco = cadP.setInformacoesEndereco();
-            
-            controlPes.insert(pessoa);
-            controlEnd.insert(endereco);
-            controlPes.relaciona(pessoa, endereco);
-            
-            
             try {
-                WriteToFile.escrever("Cadastrou Paciente ", "Logs.txt");
+                pessoa = cadP.setInformacoesPessoa();
+                endereco = cadP.setInformacoesEndereco();
+                if (pessoa == null && endereco == null) {
+                    GravarLogs.escrever("Campos obrigatótios não informados no cadastro", "Logs.txt");
+                } else {
+                    controlPes.insert(pessoa);
+                    controlEnd.insert(endereco);
+                    controlPes.relaciona(pessoa, endereco);
+                }
+            } catch (ExceptionArmazenarInformacoes ex) {
+                ex.getMessage();
             } catch (IOException ex) {
-                Logger.getLogger(ListenerTelaInternaCadastroUsuario.class.getName()).log(Level.SEVERE, null, ex);
+                ex.getMessage();
             }
-            
         }
         if ("Editar".equals(e.getActionCommand())) {
-            pessoa = cadP.setInformacoesPessoa();
-            endereco = cadP.setInformacoesEndereco();
-            
-            controlPes.update(pessoa);
-            
+
             try {
-                WriteToFile.escrever("Editou Paciente ","Logs.txt");
+                pessoa = cadP.setInformacoesPessoa();
+                endereco = cadP.setInformacoesEndereco();
+            } catch (ExceptionArmazenarInformacoes ex) {
+                Logger.getLogger(ListenerTelaInternaCadastroDePessoas.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            controlPes.update(pessoa);
+
+            try {
+                GravarLogs.escrever("Editou Paciente ", "Logs.txt");
             } catch (IOException ex) {
                 Logger.getLogger(ListenerTelaInternaCadastroUsuario.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -73,7 +77,7 @@ public class ListenerTelaInternaCadastroDePessoas implements ActionListener{
         }
         if ("Excluir".equals(e.getActionCommand())) {
             try {
-                WriteToFile.escrever("Excluiu Paciente ","Logs.txt");
+                GravarLogs.escrever("Excluiu Paciente ", "Logs.txt");
             } catch (IOException ex) {
                 Logger.getLogger(ListenerTelaInternaCadastroUsuario.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -81,11 +85,11 @@ public class ListenerTelaInternaCadastroDePessoas implements ActionListener{
         }
         if ("Buscar".equals(e.getActionCommand())) {
             try {
-                WriteToFile.escrever("Buscou Paciente ", "Logs.txt");
+                GravarLogs.escrever("Buscou Paciente ", "Logs.txt");
             } catch (IOException ex) {
                 Logger.getLogger(ListenerTelaInternaCadastroUsuario.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-         
+
     }
 }

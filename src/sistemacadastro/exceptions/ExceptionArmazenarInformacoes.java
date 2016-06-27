@@ -9,9 +9,13 @@ package sistemacadastro.exceptions;
  *
  * @author Lucas
  */
-public class ExceptionGravarArquivo extends Exception {
+public class ExceptionArmazenarInformacoes extends Exception {
 
-    public ExceptionGravarArquivo() {
-        super("Erro ao gravar arquivo");
+    public ExceptionArmazenarInformacoes() {
+        super("Algum erro ocorreu ao armazenar informações !");
+    }
+
+    public ExceptionArmazenarInformacoes(String msg) {
+        super(msg);
     }
 }

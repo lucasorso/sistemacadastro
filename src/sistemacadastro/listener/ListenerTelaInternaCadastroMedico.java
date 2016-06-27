@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 import sistemacadastro.arquivos.Arquivo;
 import sistemacadastro.arquivos.Endereco;
 import sistemacadastro.arquivos.Pessoa;
-import sistemacadastro.filestream.WriteToFile;
+import sistemacadastro.filestream.GravarLogs;
 import sistemacadastro.visao.TelaInternaCadastroMedico;
 import sistemacadastro.visao.TelaInternaProcurar;
 import sistemacadastro.visao.TelaPrincipal;
@@ -36,14 +36,14 @@ public class ListenerTelaInternaCadastroMedico implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if ("Salvar".equals(e.getActionCommand())) {
             try {
-                WriteToFile.escrever("Cadastrou Medico ", "Logs.txt");
+                GravarLogs.escrever("Cadastrou Medico ", "Logs.txt");
             } catch (IOException ex) {
                 Logger.getLogger(ListenerTelaInternaCadastroUsuario.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         if ("Editar".equals(e.getActionCommand())) {
             try {
-                WriteToFile.escrever("Editou Medico ","Logs.txt");
+                GravarLogs.escrever("Editou Medico ","Logs.txt");
             } catch (IOException ex) {
                 Logger.getLogger(ListenerTelaInternaCadastroUsuario.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -51,7 +51,7 @@ public class ListenerTelaInternaCadastroMedico implements ActionListener{
         }
         if ("Excluir".equals(e.getActionCommand())) {
             try {
-                WriteToFile.escrever("Excluiu Medico ","Logs.txt");
+                GravarLogs.escrever("Excluiu Medico ","Logs.txt");
             } catch (IOException ex) {
                 Logger.getLogger(ListenerTelaInternaCadastroUsuario.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -59,7 +59,7 @@ public class ListenerTelaInternaCadastroMedico implements ActionListener{
         }
         if ("Buscar".equals(e.getActionCommand())) {
             try {
-                WriteToFile.escrever("Buscou Medico ", "Logs.txt");
+                GravarLogs.escrever("Buscou Medico ", "Logs.txt");
             } catch (IOException ex) {
                 Logger.getLogger(ListenerTelaInternaCadastroUsuario.class.getName()).log(Level.SEVERE, null, ex);
             }

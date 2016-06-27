@@ -9,7 +9,11 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import sistemacadastro.exceptions.ExceptionLerArquivo;
+import sistemacadastro.visao.TelaLogin;
 
 /**
  *
@@ -31,12 +35,12 @@ public class LerUsuario extends Arquivo {
             }
             return sb.toString();
         } catch (FileNotFoundException ex) {
-            JOptionPane.showConfirmDialog(this, "Não foi encotrado, Será criado um novo arquivo");
+            JOptionPane.showMessageDialog(this, "Não foi encotrado, Será criado um novo arquivo");
+            //GravarUsuario.gravarArquivo("Login");
             ex.printStackTrace();
         }  catch(IOException ex){
             ex.printStackTrace();
         }
         return null;
     }
-    
 }

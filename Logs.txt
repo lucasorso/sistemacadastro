@@ -133,3 +133,61 @@ Fri Jun 24 21:57:01 BRT 2016 : ï¿½ltimo login por greg;greg
 Fri Jun 24 21:59:19 BRT 2016 : Cadastrou Paciente 
 Fri Jun 24 21:59:23 BRT 2016 : ï¿½ltimo login por greg;greg 
 Fri Jun 24 22:00:43 BRT 2016 : ï¿½ltimo login por greg;greg 
+Sun Jun 26 16:50:41 BRT 2016 : ï¿½ltimo login por weqweqwe;qweqweqw
+Sun Jun 26 16:53:31 BRT 2016 : Erro: Wrong data type: type: VARCHAR (12) expected: INTEGER value: Lucas
+SuSun Jun 26 17:02:24 BRT 2016 : Erro: Column not found: 0
+Sun Jun 26 17:11:23 BRT 2016 : Erro: Unexpected token: WHERE in statement [select nome from usuario where where nome = ? ]
+Sun Jun 26 17:17:37 BRT 2016 : ï¿½ltimo login por Lucas;qwe123
+Sun Jun 26 17:17:57 BRT 2016 : ï¿½ltimo login por Yuri;mandioca
+Sun Jun 26 18:11:05 BRT 2016 : ï¿½ltimo login por greg;greg 
+Sun Jun 26 18:11:09 BRT 2016 : ï¿½ltimo login por ;
+Sun Jun 26 18:11:09 BRT 2016 : ï¿½ltimo login por ;
+Sun Jun 26 18:11:09 BRT 2016 : ï¿½ltimo login por ;
+Sun Jun 26 18:11:09 BRT 2016 : ï¿½ltimo login por ;
+Sun Jun 26 18:11:09 BRT 2016 : ï¿½ltimo login por ;
+Sun Jun 26 18:11:10 BRT 2016 : ï¿½ltimo login por ;
+Sun Jun 26 18:11:10 BRT 2016 : ï¿½ltimo login por ;
+Sun Jun 26 18:11:11 BRT 2016 : ï¿½ltimo login por ;
+Sun Jun 26 18:11:11 BRT 2016 : ï¿½ltimo login por ;
+Sun Jun 26 18:11:11 BRT 2016 : ï¿½ltimo login por ;
+Sun Jun 26 18:11:43 BRT 2016 : ï¿½ltimo login por greg;greg 
+Sun Jun 26 18:11:44 BRT 2016 : ï¿½ltimo login por greg;greg 
+Sun Jun 26 21:59:23 BRT 2016 : Novo login Lucas;qwe123
+Sun Jun 26 22:06:27 BRT 2016 : Tentativa de entrar no sistema
+Sun Jun 26 22:06:28 BRT 2016 : Tentativa de entrar no sistema
+Sun Jun 26 22:08:44 BRT 2016 : Tentativa de entrar no sistema, com credenciais erradas
+Sun Jun 26 23:36:34 BRT 2016 : Novo login Lucas;qwe123
+Sun Jun 26 23:38:34 BRT 2016 : Tentativa de entrar no sistema, com credenciais erradas
+Sun Jun 26 23:38:37 BRT 2016 : Tentativa de entrar no sistema, com credenciais erradas
+Sun Jun 26 23:38:37 BRT 2016 : Tentativa de entrar no sistema, com credenciais erradas
+Sun Jun 26 23:38:37 BRT 2016 : Tentativa de entrar no sistema, com credenciais erradas
+Sun Jun 26 23:52:44 BRT 2016 : Novo login Yuri;mandioca
+Sun Jun 26 23:54:59 BRT 2016 : Arquivo Login.txt nï¿½o existe ! Sera criado um novo arquivo
+Sun Jun 26 23:55:05 BRT 2016 : Novo login Lucas;qwe123
+Sun Jun 26 23:56:00 BRT 2016 : Tentativa de entrar no sistema, com credenciais erradas
+Sun Jun 26 23:56:00 BRT 2016 : Tentativa de entrar no sistema, com credenciais erradas
+Sun Jun 26 23:56:00 BRT 2016 : Tentativa de entrar no sistema, com credenciais erradas
+Sun Jun 26 23:56:00 BRT 2016 : Tentativa de entrar no sistema, com credenciais erradas
+Mon Jun 27 00:00:25 BRT 2016 : Tentativa de entrar no sistema, com credenciais erradas
+Mon Jun 27 00:03:43 BRT 2016 : Falha ao entrar no sistema !
+Mon Jun 27 00:03:57 BRT 2016 : Novo login Gregori;longboard
+Mon Jun 27 00:04:07 BRT 2016 : Novo login Lucas;qwe123
+Mon Jun 27 00:05:20 BRT 2016 : Falha ao entrar no sistema !
+Mon Jun 27 00:05:32 BRT 2016 : Falha ao entrar no sistema !
+Mon Jun 27 00:05:35 BRT 2016 : Falha ao entrar no sistema !
+Mon Jun 27 00:05:38 BRT 2016 : Falha ao entrar no sistema !
+Mon Jun 27 00:05:39 BRT 2016 : Falha ao entrar no sistema !
+Mon Jun 27 00:05:55 BRT 2016 : Novo login Lucas
+Mon Jun 27 00:13:48 BRT 2016 : Novo login Lucas;qwe123
+Mon Jun 27 00:33:59 BRT 2016 : Novo login Lucas
+Mon Jun 27 00:35:27 BRT 2016 : Novo login Lucas
+Mon Jun 27 00:38:25 BRT 2016 : Novo login Lucas
+Mon Jun 27 00:39:46 BRT 2016 : Novo login Lucas
+Mon Jun 27 00:47:32 BRT 2016 : Novo login Lucas
+Mon Jun 27 00:49:13 BRT 2016 : Novo login Lucas
+Mon Jun 27 00:52:06 BRT 2016 : Novo login Lucas
+Mon Jun 27 00:52:10 BRT 2016 : Campos obrigatótios não informados no cadastro
+Mon Jun 27 01:00:32 BRT 2016 : Novo login Lucas
+Mon Jun 27 01:00:44 BRT 2016 : Campos obrigatótios não informados no cadastro
+Mon Jun 27 01:04:42 BRT 2016 : Novo login Lucas
+Mon Jun 27 01:04:50 BRT 2016 : Novo login Lucas

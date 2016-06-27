@@ -3,7 +3,7 @@ package sistemacadastro.filestream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class WriteToFile {
+public class GravarLogs {
     
     public static void escrever(String mensagem, String logFile) throws IOException {
         //O segundo parametro "true" indica append para o arquivo em quest�o.
