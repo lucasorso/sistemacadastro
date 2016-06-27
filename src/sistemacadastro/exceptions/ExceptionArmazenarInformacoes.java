@@ -5,6 +5,8 @@
  */
 package sistemacadastro.exceptions;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Lucas

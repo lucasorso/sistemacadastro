@@ -24,11 +24,14 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame {
     }
 
     public Pessoa setInformacoesPessoa() throws ExceptionArmazenarInformacoes {
+
+        String teste = txtNomeCliente.getText();
         if (txtNomeCliente.getText().isEmpty()
                 || txtCpfCliente.getText().isEmpty()
                 || txtNomeCliente.getText().isEmpty()
                 || txtRgCliente.getText().isEmpty()
                 || sexo.isEmpty()) {
+            return null;
 
         } else {
             pessoa.setNome(txtNomeCliente.getText());
@@ -38,7 +41,6 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame {
             limparCampos();
             return pessoa;
         }
-        return null;
     }
 
     public Endereco setInformacoesEndereco() throws ExceptionArmazenarInformacoes {
@@ -47,6 +49,7 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame {
                 || txtCepCliente.getText().isEmpty()
                 || txtCidade.getText().isEmpty()
                 || comboEstadoCliente.getSelectedItem().toString().isEmpty()) {
+            return null;
         } else {
             endereco.setRua(txtRuaCliente.getText());
             endereco.setCep(txtCepCliente.getText());
@@ -55,7 +58,7 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame {
             limparCampos();
             return endereco;
         }
-        return null;
+
     }
 
     public void limparCampos() {
