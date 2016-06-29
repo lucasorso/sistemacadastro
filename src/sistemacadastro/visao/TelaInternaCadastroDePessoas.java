@@ -5,9 +5,9 @@
  */
 package sistemacadastro.visao;
 
-import javax.swing.JOptionPane;
 import sistemacadastro.arquivos.Endereco;
 import sistemacadastro.arquivos.Pessoa;
+import sistemacadastro.controle.Conexao;
 import sistemacadastro.exceptions.ExceptionArmazenarInformacoes;
 import sistemacadastro.listener.ListenerTelaInternaCadastroDePessoas;
 
@@ -16,12 +16,14 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame {
     private ListenerTelaInternaCadastroDePessoas listener = new ListenerTelaInternaCadastroDePessoas(this);
     Pessoa pessoa = new Pessoa();
     Endereco endereco = new Endereco();
+    Conexao conn = new Conexao();
     String sexo;
 
     public TelaInternaCadastroDePessoas() {
         this.setVisible(true);
         initComponents();
     }
+    
 
     public Pessoa setInformacoesPessoa() throws ExceptionArmazenarInformacoes {
 
@@ -39,35 +41,36 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame {
             pessoa.setRg(txtRgCliente.getText());
             pessoa.setSexo(this.sexo);
             limparCampos();
-            return pessoa;
+            return pessoa;                        
         }
     }
 
     public Endereco setInformacoesEndereco() throws ExceptionArmazenarInformacoes {
 
-        if (txtRuaCliente.getText().isEmpty()
-                || txtCepCliente.getText().isEmpty()
-                || txtCidade.getText().isEmpty()
-                || comboEstadoCliente.getSelectedItem().toString().isEmpty()) {
+        if (jTextFieldRua.getText().isEmpty()
+                || jTextFieldCep.getText().isEmpty()
+                || jTextFieldCidade.getText().isEmpty()
+                || jComboBoxEstado.getSelectedItem().toString().isEmpty()) {
             return null;
         } else {
-            endereco.setRua(txtRuaCliente.getText());
-            endereco.setCep(txtCepCliente.getText());
-            endereco.setCidade(txtCidade.getText());
-            endereco.setEstado(comboEstadoCliente.getSelectedItem().toString());
+            
+            endereco.setRua(jTextFieldRua.getText());
+            endereco.setCep(jTextFieldCep.getText());
+            endereco.setCidade(jTextFieldCidade.getText());
+            endereco.setEstado(jComboBoxEstado.getSelectedItem().toString());
             limparCampos();
             return endereco;
         }
-
     }
+    
 
     public void limparCampos() {
         txtNomeCliente.setText("");
         txtCpfCliente.setText("");
         txtRgCliente.setText("");
-        txtRuaCliente.setText("");
-        txtCepCliente.setText("");
-        txtCidade.setText("");
+//        jtxtRuaClient.setText("");
+//        txtCepCliente.setText("");
+//        txtCidade.setText("");
     }
 
     @SuppressWarnings("unchecked")
@@ -91,11 +94,11 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        txtRuaCliente = new javax.swing.JTextField();
-        txtCidade = new javax.swing.JTextField();
-        txtCepCliente = new javax.swing.JTextField();
-        comboEstadoCliente = new javax.swing.JComboBox<String>();
         jLabel7 = new javax.swing.JLabel();
+        jTextFieldRua = new javax.swing.JTextField();
+        jTextFieldCidade = new javax.swing.JTextField();
+        jTextFieldCep = new javax.swing.JTextField();
+        jComboBoxEstado = new javax.swing.JComboBox<>();
 
         setClosable(true);
 
@@ -201,38 +204,13 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame {
 
         jLabel6.setText("CEP:");
 
-        comboEstadoCliente.addItem("AL");
-        comboEstadoCliente.addItem("AM");
-        comboEstadoCliente.addItem("BA");
-        comboEstadoCliente.addItem("CE");
-        comboEstadoCliente.addItem("DF");
-        comboEstadoCliente.addItem("ES");
-        comboEstadoCliente.addItem("GO");
-        comboEstadoCliente.addItem("MA");
-        comboEstadoCliente.addItem("MT");
-        comboEstadoCliente.addItem("MS");
-        comboEstadoCliente.addItem("MG");
-        comboEstadoCliente.addItem("PA");
-        comboEstadoCliente.addItem("PB");
-        comboEstadoCliente.addItem("PR");
-        comboEstadoCliente.addItem("PE");
-        comboEstadoCliente.addItem("PI");
-        comboEstadoCliente.addItem("RJ");
-        comboEstadoCliente.addItem("RN");
-        comboEstadoCliente.addItem("RS");
-        comboEstadoCliente.addItem("RO");
-        comboEstadoCliente.addItem("RR");
-        comboEstadoCliente.addItem("SC");
-        comboEstadoCliente.addItem("SP");
-        comboEstadoCliente.addItem("SE");
-        comboEstadoCliente.addItem("TO");
-        comboEstadoCliente.addActionListener(new java.awt.event.ActionListener() {
+        jLabel7.setText("Estado:");
+
+        jComboBoxEstado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboEstadoClienteActionPerformed(evt);
+                jComboBoxEstadoActionPerformed(evt);
             }
         });
-
-        jLabel7.setText("Estado:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -240,21 +218,24 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel7))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtRuaCliente)
-                    .addComponent(txtCidade)
-                    .addComponent(txtCepCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(51, 51, 51)
-                .addComponent(comboEstadoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(167, 167, 167))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(32, 32, 32)
+                        .addComponent(jTextFieldRua, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addGap(18, 18, 18)
+                        .addComponent(jComboBoxEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextFieldCep, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
+                            .addComponent(jTextFieldCidade))))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -262,21 +243,47 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(txtRuaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldRua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(txtCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(txtCepCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldCep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(comboEstadoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
+                    .addComponent(jLabel7)
+                    .addComponent(jComboBoxEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32))
         );
+
+        jComboBoxEstado.addItem("AL");
+        jComboBoxEstado.addItem("AM");
+        jComboBoxEstado.addItem("BA");
+        jComboBoxEstado.addItem("CE");
+        jComboBoxEstado.addItem("DF");
+        jComboBoxEstado.addItem("ES");
+        jComboBoxEstado.addItem("GO");
+        jComboBoxEstado.addItem("MA");
+        jComboBoxEstado.addItem("MT");
+        jComboBoxEstado.addItem("MS");
+        jComboBoxEstado.addItem("MG");
+        jComboBoxEstado.addItem("PA");
+        jComboBoxEstado.addItem("PB");
+        jComboBoxEstado.addItem("PR");
+        jComboBoxEstado.addItem("PE");
+        jComboBoxEstado.addItem("PI");
+        jComboBoxEstado.addItem("RJ");
+        jComboBoxEstado.addItem("RN");
+        jComboBoxEstado.addItem("RS");
+        jComboBoxEstado.addItem("RO");
+        jComboBoxEstado.addItem("RR");
+        jComboBoxEstado.addItem("SC");
+        jComboBoxEstado.addItem("SP");
+        jComboBoxEstado.addItem("SE");
+        jComboBoxEstado.addItem("TO");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -288,8 +295,7 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButtonSalvar)
                         .addGap(18, 18, 18)
@@ -297,8 +303,8 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jButtonExcluir)
                         .addGap(18, 18, 18)
-                        .addComponent(jButtonBuscar)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(jButtonBuscar)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -313,7 +319,7 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame {
                     .addComponent(jButtonEditar)
                     .addComponent(jButtonExcluir)
                     .addComponent(jButtonBuscar))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         pack();
@@ -326,10 +332,6 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame {
     private void jButtonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarActionPerformed
 
     }//GEN-LAST:event_jButtonBuscarActionPerformed
-
-    private void comboEstadoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboEstadoClienteActionPerformed
-
-    }//GEN-LAST:event_comboEstadoClienteActionPerformed
 
     private void checkBoxFemininoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBoxFemininoActionPerformed
         if (checkBoxFeminino.isSelected()) {
@@ -349,15 +351,19 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame {
 
     }//GEN-LAST:event_txtRgClienteActionPerformed
 
+    private void jComboBoxEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxEstadoActionPerformed
+
+    }//GEN-LAST:event_jComboBoxEstadoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox checkBoxFeminino;
     private javax.swing.JCheckBox checkBoxMasculino;
-    private javax.swing.JComboBox<String> comboEstadoCliente;
     private javax.swing.JButton jButtonBuscar;
     private javax.swing.JButton jButtonEditar;
     private javax.swing.JButton jButtonExcluir;
     private javax.swing.JButton jButtonSalvar;
+    private javax.swing.JComboBox<String> jComboBoxEstado;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -367,11 +373,11 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField txtCepCliente;
-    private javax.swing.JTextField txtCidade;
+    private javax.swing.JTextField jTextFieldCep;
+    private javax.swing.JTextField jTextFieldCidade;
+    private javax.swing.JTextField jTextFieldRua;
     private javax.swing.JTextField txtCpfCliente;
-    private javax.swing.JTextField txtNomeCliente;
+    public javax.swing.JTextField txtNomeCliente;
     private javax.swing.JTextField txtRgCliente;
-    private javax.swing.JTextField txtRuaCliente;
     // End of variables declaration//GEN-END:variables
 }

@@ -17,6 +17,14 @@ public class Endereco {
     private String cep;
     private String estado;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     /**
      * @return the rua
      */

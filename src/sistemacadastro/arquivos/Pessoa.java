@@ -86,5 +86,18 @@ public class Pessoa {
     public void setSexo(String sexo) {
         this.sexo = sexo;
     }
+
+    @Override
+    public String toString() {
+        return 
+                getCodigo() + " " +
+                getNome() + " " +
+                getCpf() + " " +
+                getRg() + " " +
+                getSexo();
+               // super.toString(); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
     
 }

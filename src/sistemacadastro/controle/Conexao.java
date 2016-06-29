@@ -27,13 +27,13 @@ public class Conexao {
         return conn;
     }
     
-    public void executaSQL(String sql){
-        Connection conn = null;
-        try {
-            stm = conn.createStatement(rs.TYPE_SCROLL_INSENSITIVE, rs.CONCUR_READ_ONLY);
-            rs = stm.executeQuery(sql);
-        } catch (SQLException ex) {
-            //JOptionPane.showMessageDialog(null, "erro ao criar ExecutaSQL" +ex);
-        }    
-    }
+//    public void executaSQL(String sql){
+//        Connection conn = getConnection();
+//        try {
+//            stm = conn.createStatement(rs.TYPE_SCROLL_INSENSITIVE, rs.CONCUR_READ_ONLY);
+//            rs = stm.executeQuery(sql);
+//        } catch (SQLException ex) {
+//            //JOptionPane.showMessageDialog(null, "erro ao criar ExecutaSQL" +ex);
+//        }    
+//    }
 }
