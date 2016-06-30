@@ -24,7 +24,7 @@ public class ControleEnderecoDao {
             ps.setString(1, end.getRua());
             ps.setString(2, end.getCidade());
             ps.setString(3, end.getCep());
-            ps.setString(4, end.getRua());
+            ps.setString(4, end.getEstado());
             ps.execute();
             conn.commit();
         } catch(SQLException e) {

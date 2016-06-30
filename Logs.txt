@@ -261,3 +261,30 @@ Tue Jun 28 22:39:52 BRT 2016 : Buscou Paciente
 Tue Jun 28 22:39:52 BRT 2016 : Buscou Paciente 
 Tue Jun 28 22:39:52 BRT 2016 : Buscou Paciente 
 Tue Jun 28 22:39:52 BRT 2016 : Buscou Paciente 
+Wed Jun 29 20:49:00 BRT 2016 : Novo login Yuri
+Wed Jun 29 20:49:05 BRT 2016 : Buscou Paciente 
+Wed Jun 29 20:49:39 BRT 2016 : Novo login Yuri
+Wed Jun 29 20:49:43 BRT 2016 : Buscou Paciente 
+Wed Jun 29 20:51:28 BRT 2016 : Novo login Yuri
+Wed Jun 29 20:51:33 BRT 2016 : Buscou Paciente 
+Wed Jun 29 20:51:57 BRT 2016 : Buscou Paciente 
+Wed Jun 29 21:57:11 BRT 2016 : Novo login Yuri
+Wed Jun 29 21:57:24 BRT 2016 : Buscou Paciente 
+Wed Jun 29 21:58:16 BRT 2016 : Novo login Yuri
+Wed Jun 29 22:00:02 BRT 2016 : Novo login Lucas
+Wed Jun 29 22:00:10 BRT 2016 : Buscou Paciente 
+Wed Jun 29 22:00:58 BRT 2016 : Novo login Lucas
+Wed Jun 29 22:02:32 BRT 2016 : Buscou Paciente 
+Wed Jun 29 22:03:11 BRT 2016 : Novo login Lucas
+Wed Jun 29 22:05:42 BRT 2016 : Novo login Yuri
+Wed Jun 29 22:09:30 BRT 2016 : Novo login Yuri
+Wed Jun 29 22:10:17 BRT 2016 : Novo login Yuri
+Wed Jun 29 22:12:24 BRT 2016 : Campos obrigatótios não informados no cadastro
+Wed Jun 29 22:13:56 BRT 2016 : Campos obrigatótios não informados no cadastro
+Wed Jun 29 22:15:07 BRT 2016 : Campos obrigatótios não informados no cadastro
+Wed Jun 29 22:17:05 BRT 2016 : Novo login Yuri
+Wed Jun 29 22:18:16 BRT 2016 : Dados inseridos com sucesso no banco de dados
+Wed Jun 29 22:18:16 BRT 2016 : Cadastrou novo usuario
+Wed Jun 29 22:19:37 BRT 2016 : Novo login Yuri
+Wed Jun 29 22:20:01 BRT 2016 : Dados inseridos com sucesso no banco de dados
+Wed Jun 29 22:20:01 BRT 2016 : Cadastrou novo usuario

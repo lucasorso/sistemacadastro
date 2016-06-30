@@ -8,6 +8,8 @@ package sistemacadastro.listener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -85,9 +87,19 @@ public class ListenerTelaInternaCadastroDePessoas implements ActionListener {
             }
             cadP.dispose();
         }
+
         if ("Buscar".equals(e.getActionCommand())) {
             try {
-                GravarLogs.escrever("Buscou Paciente ", "Logs.txt");
+
+                if ("".equals(cadP.txtNomeCliente.getText())  ||  cadP.txtNomeCliente.getText() == null) {
+                    List<Pessoa> listaPessoas = new ArrayList<Pessoa>();
+                    listaPessoas = controlPes.getAll();
+                    cadP.getLista(listaPessoas);
+                    GravarLogs.escrever("Buscou Paciente ", "Logs.txt");
+                } else {
+                    cadP.getInfo(controlPes.buscaPessoa(cadP.txtNomeCliente.getText()));
+                }
+
             } catch (IOException ex) {
                 Logger.getLogger(ListenerTelaInternaCadastroUsuario.class.getName()).log(Level.SEVERE, null, ex);
             }

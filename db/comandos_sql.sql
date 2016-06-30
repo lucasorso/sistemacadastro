@@ -75,3 +75,6 @@ id_endereco integer
 alter table pessoa_endereco
 add FOREIGN KEY (id_endereco)
     REFERENCES endereco (id)
+	
+	
+select * from pessoa_endereco inner join pessoa on pessoa.id = pessoa_endereco.id_pessoa inner join endereco on endereco.id = pessoa_endereco.id_endereco where id = 2
