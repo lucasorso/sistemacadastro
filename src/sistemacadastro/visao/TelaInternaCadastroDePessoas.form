@@ -99,7 +99,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="jButtonEditar">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Editar"/>
+        <Property name="text" type="java.lang.String" value="Editar" postCode="jButtonEditar.setActionCommand(&quot;Editar&quot;);&#xa;jButtonEditar.addActionListener(listener);"/>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>

@@ -62,9 +62,7 @@ public class ListenerTelaInternaCadastroDePessoas implements ActionListener {
         }
         if ("Editar".equals(e.getActionCommand())) {
 
-            pessoa = cadP.setInformacoesPessoa();
-           // endereco = cadP.setInformacoesEndereco();
-
+            pessoa = cadP.setInformacoesEdita();           
             controlPes.update(pessoa);
 
             try {
@@ -72,7 +70,6 @@ public class ListenerTelaInternaCadastroDePessoas implements ActionListener {
             } catch (IOException ex) {
                 Logger.getLogger(ListenerTelaInternaCadastroUsuario.class.getName()).log(Level.SEVERE, null, ex);
             }
-            cadP.dispose();
         }
         if ("Excluir".equals(e.getActionCommand())) {
             try {

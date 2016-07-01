@@ -257,15 +257,19 @@ public class ControlePessoaDao {
         PreparedStatement ps = null;
         try {
             conn = Conexao.getConnection();
-            String sql = "update pessoa set nome = ?,cpf = ?,rg = ?,sexo = ? where codigo = ?";
+            String sql = "update pessoas set nome = ?,cpf = ?,rg = ?,sexo = ?,rua = ?,cidade = ?,cep = ?,estado = ? where id_pessoas = ?";
             ps = conn.prepareStatement(sql);
             ps.setString(1, pessoa.getNome());
             ps.setString(2, pessoa.getCpf());
             ps.setString(3, pessoa.getRg());
             ps.setString(4, pessoa.getSexo());
-            ps.setInt(5, pessoa.getCodigo());
-            ps.execute();
-
+            ps.setString(5, pessoa.getRua());
+            ps.setString(6, pessoa.getCidade());
+            ps.setString(7, pessoa.getCep());
+            ps.setString(8, pessoa.getEstado());
+            ps.setInt(9, pessoa.getId());
+            ps.execute();            
+            JOptionPane.showMessageDialog(null, "Editado com Sucesso!");
             conn.commit();
         } catch (SQLException e) {
             System.out.println("ERRO: " + e.getMessage());

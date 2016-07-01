@@ -362,3 +362,31 @@ Thu Jun 30 22:26:09 BRT 2016 : Cadastrou novo usuario
 Thu Jun 30 22:26:46 BRT 2016 : Buscou Paciente 
 Thu Jun 30 22:30:48 BRT 2016 : Novo login Yuri
 Thu Jun 30 22:31:52 BRT 2016 : Novo login Yuri
+Thu Jun 30 22:52:13 BRT 2016 : Novo login Yuri
+Thu Jun 30 22:53:00 BRT 2016 : Cadastrou Medico 
+Thu Jun 30 22:53:25 BRT 2016 : Novo login Yuri
+Thu Jun 30 22:53:57 BRT 2016 : Cadastrou Medico 
+Thu Jun 30 23:20:11 BRT 2016 : Novo login Yuri
+Thu Jun 30 23:21:44 BRT 2016 : Novo login Yuri
+Thu Jun 30 23:22:08 BRT 2016 : Editou Paciente 
+Thu Jun 30 23:22:51 BRT 2016 : Novo login Yuri
+Thu Jun 30 23:23:26 BRT 2016 : Editou Paciente 
+Thu Jun 30 23:23:55 BRT 2016 : Novo login Yuri
+Thu Jun 30 23:24:19 BRT 2016 : Editou Paciente 
+Thu Jun 30 23:24:47 BRT 2016 : Novo login Yuri
+Thu Jun 30 23:25:09 BRT 2016 : Editou Paciente 
+Thu Jun 30 23:26:21 BRT 2016 : Novo login Yuri
+Thu Jun 30 23:26:47 BRT 2016 : Editou Paciente 
+Thu Jun 30 23:27:11 BRT 2016 : Editou Paciente 
+Thu Jun 30 23:29:04 BRT 2016 : Novo login Yuri
+Thu Jun 30 23:29:32 BRT 2016 : Editou Paciente 
+Thu Jun 30 23:30:09 BRT 2016 : Novo login Yuri
+Thu Jun 30 23:30:33 BRT 2016 : Editou Paciente 
+Thu Jun 30 23:31:36 BRT 2016 : Novo login Yuri
+Thu Jun 30 23:32:14 BRT 2016 : Editou Paciente 
+Thu Jun 30 23:33:09 BRT 2016 : Novo login Yuri
+Thu Jun 30 23:33:32 BRT 2016 : Editou Paciente 
+Thu Jun 30 23:34:58 BRT 2016 : Novo login Yuri
+Thu Jun 30 23:35:27 BRT 2016 : Editou Paciente 
+Thu Jun 30 23:36:57 BRT 2016 : Novo login Yuri
+Thu Jun 30 23:37:27 BRT 2016 : Editou Paciente 

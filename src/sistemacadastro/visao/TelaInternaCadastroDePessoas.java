@@ -86,6 +86,20 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame {
         
     }
     
+    public Pessoa setInformacoesEdita(){
+        pessoa.setId(Integer.parseInt(jTextFieldCod.getText()));
+        pessoa.setNome(txtNomeCliente.getText());
+        pessoa.setCpf(jFormattedTextFieldCpf.getText());
+        pessoa.setRg(jFormattedTextFieldRg.getText());
+        pessoa.setSexo(this.sexo);
+        pessoa.setRua(jTextFieldRua00.getText());
+        pessoa.setCep(jFormattedTextFieldCep00.getText());
+        pessoa.setCidade(jTextFieldCidade00.getText());
+        pessoa.setEstado(String.valueOf(jComboBoxEstado.getSelectedItem()));
+        limparCampos();
+        return pessoa;
+    }
+    
     public Pessoa setId(){
         pessoa.setId(Integer.parseInt(jTextFieldCod.getText()));
         limparCampos();
@@ -174,6 +188,8 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame {
         });
 
         jButtonEditar.setText("Editar");
+        jButtonEditar.setActionCommand("Editar");
+        jButtonEditar.addActionListener(listener);
         jButtonEditar.setEnabled(false);
 
         jButtonBuscar.setText("Buscar");
