@@ -7,7 +7,6 @@ package sistemacadastro.visao;
 
 import sistemacadastro.arquivos.Consulta;
 import sistemacadastro.arquivos.Pessoa;
-import sistemacadastro.listener.ListenerTelaInternaCadastroDePessoas;
 import sistemacadastro.listener.ListenerTelaInternaConsulta;
 
 /**
@@ -15,30 +14,41 @@ import sistemacadastro.listener.ListenerTelaInternaConsulta;
  * @author cri- UA
  */
 public class TelaInternaConsulta extends javax.swing.JInternalFrame {
-    
+
     private ListenerTelaInternaConsulta listener = new ListenerTelaInternaConsulta(this);
-    private Consulta cons =  new Consulta();
+    private Consulta cons = new Consulta();
+
     /**
      * Creates new form TelaInternaConsulta
      */
     public TelaInternaConsulta() {
         initComponents();
     }
-    
-    public void getInfo(Pessoa p_e){
-         jTextFieldNome.setText(p_e.getNome());
-         jFormattedTextFieldCpf.setText(p_e.getCpf());
-         jFormattedTextFieldRg.setText(p_e.getRg());         
+
+    public void getInfo(Pessoa p_e) {
+        jTextFieldNome.setText(p_e.getNome());
+        jFormattedTextFieldCpf.setText(p_e.getCpf());
+        jFormattedTextFieldRg.setText(p_e.getRg());
     }
-    
-    public Consulta setInfo(){
+
+    public Consulta setInfo() {
         cons.setAltura(jTextFieldaltura.getText());
         cons.setNome_paciente(jTextFieldNome.getText());
         cons.setPeso(jTextFieldPeso.getText());
         cons.setPressao(jTextFieldPres.getText());
         cons.setProblema(jTextAreaProblema.getText());
         cons.setTemp(jTextFieldTemp.getText());
+        limpaCampos();
         return cons;
+    }
+
+    public void limpaCampos() {
+        jTextFieldaltura.setText("");
+        jTextFieldNome.setText("");
+        jTextFieldPeso.setText("");
+        jTextFieldPres.setText("");
+        jTextAreaProblema.setText("");
+        jTextFieldTemp.setText("");
     }
 
     /**

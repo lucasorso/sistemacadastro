@@ -46,7 +46,7 @@ public class ListenerTelaInternaCadastroDePessoas implements ActionListener {
             try {
                 pessoa = cadP.setInformacoesPessoa();
                 //endereco = cadP.setInformacoesEndereco();
-                if (pessoa == null ) {
+                if (pessoa == null) {
                     GravarLogs.escrever("Campos obrigatótios não informados no cadastro", "Logs.txt");
                     JOptionPane.showMessageDialog(cadP, "É necessário preencher todos os campos !");
                 } else {
@@ -54,7 +54,8 @@ public class ListenerTelaInternaCadastroDePessoas implements ActionListener {
                     //controlEnd.insert(endereco);
                     //controlPes.relaciona(pessoa, endereco);
                     GravarLogs.escrever("Cadastrou novo usuario", "Logs.txt");
-                    JOptionPane.showMessageDialog(null, "Salvo com Sucesso!");
+                    JOptionPane.showMessageDialog(cadP, "Paciente salvo com sucesso!");
+                   
                 }
             } catch (IOException ex) {
                 ex.getMessage();

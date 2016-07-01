@@ -501,3 +501,59 @@ Fri Jul 01 17:03:34 BRT 2016 : Novo login Yuri
 Fri Jul 01 17:03:42 BRT 2016 : Buscou Paciente 
 Fri Jul 01 17:04:51 BRT 2016 : Novo login Yuri
 Fri Jul 01 17:04:58 BRT 2016 : Buscou Paciente 
+Fri Jul 01 19:19:52 BRT 2016 : Novo login Yuri
+Fri Jul 01 19:19:59 BRT 2016 : Buscou Paciente 
+Fri Jul 01 19:20:20 BRT 2016 : Excluiu Paciente 
+Fri Jul 01 19:20:24 BRT 2016 : Buscou Paciente 
+Fri Jul 01 19:20:24 BRT 2016 : Buscou Paciente 
+Fri Jul 01 19:20:25 BRT 2016 : Buscou Paciente 
+Fri Jul 01 19:20:25 BRT 2016 : Buscou Paciente 
+Fri Jul 01 19:20:25 BRT 2016 : Buscou Paciente 
+Fri Jul 01 19:20:25 BRT 2016 : Buscou Paciente 
+Fri Jul 01 19:20:26 BRT 2016 : Buscou Paciente 
+Fri Jul 01 19:20:26 BRT 2016 : Buscou Paciente 
+Fri Jul 01 19:20:26 BRT 2016 : Buscou Paciente 
+Fri Jul 01 19:20:29 BRT 2016 : Buscou Paciente 
+Fri Jul 01 19:20:43 BRT 2016 : Buscou Paciente 
+Fri Jul 01 19:22:07 BRT 2016 : Cadastrou novo usuario
+Fri Jul 01 19:23:04 BRT 2016 : Novo login Yuri
+Fri Jul 01 19:23:08 BRT 2016 : Cadastrou novo usuario
+Fri Jul 01 19:23:09 BRT 2016 : Cadastrou novo usuario
+Fri Jul 01 19:23:09 BRT 2016 : Cadastrou novo usuario
+Fri Jul 01 19:23:09 BRT 2016 : Cadastrou novo usuario
+Fri Jul 01 19:23:09 BRT 2016 : Cadastrou novo usuario
+Fri Jul 01 19:23:09 BRT 2016 : Cadastrou novo usuario
+Fri Jul 01 19:23:10 BRT 2016 : Cadastrou novo usuario
+Fri Jul 01 19:23:10 BRT 2016 : Cadastrou novo usuario
+Fri Jul 01 19:23:10 BRT 2016 : Cadastrou novo usuario
+Fri Jul 01 19:23:10 BRT 2016 : Cadastrou novo usuario
+Fri Jul 01 19:23:11 BRT 2016 : Cadastrou novo usuario
+Fri Jul 01 19:23:16 BRT 2016 : Cadastrou novo usuario
+Fri Jul 01 19:23:17 BRT 2016 : Cadastrou novo usuario
+Fri Jul 01 19:23:17 BRT 2016 : Cadastrou novo usuario
+Fri Jul 01 19:23:17 BRT 2016 : Cadastrou novo usuario
+Fri Jul 01 19:25:13 BRT 2016 : Novo login Yuri
+Fri Jul 01 19:25:30 BRT 2016 : Cadastrou novo usuario
+Fri Jul 01 19:26:13 BRT 2016 : Novo login Yuri
+Fri Jul 01 19:26:17 BRT 2016 : Campos obrigatótios não informados no cadastro
+Fri Jul 01 19:26:20 BRT 2016 : Campos obrigatótios não informados no cadastro
+Fri Jul 01 19:26:28 BRT 2016 : Campos obrigatótios não informados no cadastro
+Fri Jul 01 19:26:57 BRT 2016 : Buscou Paciente 
+Fri Jul 01 19:27:20 BRT 2016 : Buscou Paciente 
+Fri Jul 01 19:28:05 BRT 2016 : Buscou Medico 
+Fri Jul 01 19:40:10 BRT 2016 : Novo login Yuri
+Fri Jul 01 19:45:23 BRT 2016 : Cadastrou novo usuario
+Fri Jul 01 19:46:06 BRT 2016 : Novo login Yuri
+Fri Jul 01 19:46:40 BRT 2016 : Cadastrou Medico 
+Fri Jul 01 19:46:42 BRT 2016 : Buscou Paciente 
+Fri Jul 01 19:46:43 BRT 2016 : Buscou Paciente 
+Fri Jul 01 19:46:44 BRT 2016 : Buscou Paciente 
+Fri Jul 01 19:46:44 BRT 2016 : Buscou Paciente 
+Fri Jul 01 19:46:44 BRT 2016 : Buscou Paciente 
+Fri Jul 01 19:46:44 BRT 2016 : Buscou Paciente 
+Fri Jul 01 19:46:44 BRT 2016 : Buscou Paciente 
+Fri Jul 01 19:47:02 BRT 2016 : Novo login Yuri
+Fri Jul 01 19:47:28 BRT 2016 : Editou Paciente 
+Fri Jul 01 19:47:37 BRT 2016 : Buscou Paciente 
+Fri Jul 01 19:48:05 BRT 2016 : Buscou Paciente 
+Fri Jul 01 19:48:08 BRT 2016 : Buscou Paciente 

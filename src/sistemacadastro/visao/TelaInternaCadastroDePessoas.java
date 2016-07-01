@@ -29,7 +29,7 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame {
         initComponents();
         formMask();
     }
-    
+
     public void formMask() {
         try {
             MaskFormatter formCpf = new MaskFormatter("###.###.###-##");//elemento resp por criar o formato da mascara
@@ -42,37 +42,39 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(null, "Erro ao criar mascara frm Cliente linha 393 \nERRO:" + ex);
         }
     }
-    
+
     public void getLista(java.util.List<Pessoa> listaPessoas) {
         jTextAreaDados.append("Código  |   Nome      |      CPF     |     RG    |     Sexo      \n");
-         for (int i = 0; i < listaPessoas.size(); i++){
+        for (int i = 0; i < listaPessoas.size(); i++) {
             jTextAreaDados.append(listaPessoas.get(i).toString() + "\n");
         }
     }
-     
-    public void getInfo(Pessoa p_e){
-         jTextFieldCod.setText(String.valueOf(p_e.getId()));
-         txtNomeCliente.setText(p_e.getNome());
-         jFormattedTextFieldCpf.setText(p_e.getCpf());
-         jFormattedTextFieldRg.setText(p_e.getRg());
-         jTextFieldRua00.setText(p_e.getRua());
-         jTextFieldCidade00.setText(p_e.getCidade());
-         jFormattedTextFieldCep00.setText(p_e.getCep());
-         jComboBoxEstado.setSelectedItem(p_e.getEstado());
-         
-     }
+
+    public void getInfo(Pessoa p_e) {
+        jTextFieldCod.setText(String.valueOf(p_e.getId()));
+        txtNomeCliente.setText(p_e.getNome());
+        jFormattedTextFieldCpf.setText(p_e.getCpf());
+        jFormattedTextFieldRg.setText(p_e.getRg());
+        jTextFieldRua00.setText(p_e.getRua());
+        jTextFieldCidade00.setText(p_e.getCidade());
+        jFormattedTextFieldCep00.setText(p_e.getCep());
+        jComboBoxEstado.setSelectedItem(p_e.getEstado());
+
+    }
 
     public Pessoa setInformacoesPessoa() {
 
 //        String teste = txtNomeCliente.getText();
-//        if (txtNomeCliente.getText().isEmpty()
-//                || txtCpfCliente.getText().isEmpty()
-//                || txtNomeCliente.getText().isEmpty()
-//                || txtRgCliente.getText().isEmpty()
-//                || sexo.isEmpty()) {
-//            return null;
-//
-//        } else {
+        if ("".equals(txtNomeCliente.getText())
+                || "   .   .   -  ".equals(jFormattedTextFieldCpf.getText())
+                || "          ".equals(jFormattedTextFieldRg.getText())
+                || "".equals(jTextFieldRua00.getText())
+                || "".equals(jTextFieldCidade00.getText())
+                || "".equals(jComboBoxEstado.getSelectedItem().toString())
+                || sexo == null) {
+            return null;
+
+        } else {
             pessoa.setNome(txtNomeCliente.getText());
             pessoa.setCpf(jFormattedTextFieldCpf.getText());
             pessoa.setRg(jFormattedTextFieldRg.getText());
@@ -82,11 +84,12 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame {
             pessoa.setCidade(jTextFieldCidade00.getText());
             pessoa.setEstado(jComboBoxEstado.getSelectedItem().toString());
             limparCampos();
-            return pessoa;                        
-        
+            return pessoa;
+        }
+
     }
-    
-    public Pessoa setInformacoesEdita(){
+
+    public Pessoa setInformacoesEdita() {
         pessoa.setId(Integer.parseInt(jTextFieldCod.getText()));
         pessoa.setNome(txtNomeCliente.getText());
         pessoa.setCpf(jFormattedTextFieldCpf.getText());
@@ -99,8 +102,8 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame {
         limparCampos();
         return pessoa;
     }
-    
-    public Pessoa setId(){
+
+    public Pessoa setId() {
         pessoa.setId(Integer.parseInt(jTextFieldCod.getText()));
         limparCampos();
         return pessoa;
@@ -122,8 +125,6 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame {
 //            return endereco;
 //        //s}
 //    }
-    
-
     public void limparCampos() {
         txtNomeCliente.setText("");
         jFormattedTextFieldCpf.setText("");
