@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 import sistemacadastro.arquivos.Endereco;
 import sistemacadastro.arquivos.Pessoa;
 import sistemacadastro.arquivos.Pessoa_endereco;
@@ -25,12 +26,16 @@ public class ControlePessoaDao {
         PreparedStatement ps = null;
         try {
             conn = Conexao.getConnection();
-            String sql = "insert into pessoa (nome,cpf,rg,sexo) values(?,?,?,?)";
+            String sql = "insert into pessoas (nome,cpf,rg,sexo,rua,cidade,cep,estado) values(?,?,?,?,?,?,?,?)";
             ps = conn.prepareStatement(sql);
             ps.setString(1, pessoa.getNome());
             ps.setString(2, pessoa.getCpf());
             ps.setString(3, pessoa.getRg());
             ps.setString(4, pessoa.getSexo());
+            ps.setString(5, pessoa.getRua());
+            ps.setString(6, pessoa.getCidade());
+            ps.setString(7, pessoa.getCep());
+            ps.setString(8, pessoa.getEstado());
             ps.execute();
 
             conn.commit();
@@ -107,48 +112,26 @@ public class ControlePessoaDao {
         return listaPessoas;
     }
     
-    public Pessoa_endereco buscaPessoa(String pessoa){
-        Pessoa_endereco pessoa_endereco = new Pessoa_endereco();
+    public Pessoa buscaPessoa(String pessoa_nome){
+        Pessoa pessoa= new Pessoa();
         Connection conn = null;
         PreparedStatement ps = null;
         try {
             conn = Conexao.getConnection();
-            String sql = "select * from pessoa where nome = '"+ pessoa +"'";
+            String sql = "select * from pessoas where nome = '"+ pessoa_nome +"'";
             ps = conn.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
             
-            int id_pessoa = 0;
-            
-            if (rs.next()) {
-                id_pessoa = rs.getInt(1);
-            }
-            
-            String sql1 = "select * from pessoa_endereco where id_pessoa = "+ id_pessoa +"";
-            ps = conn.prepareStatement(sql1);
-            ResultSet rs1 = ps.executeQuery();
-            
-            int id_pessoa_endereco = 0;
-            
-            if (rs1.next()){
-                id_pessoa_endereco = rs1.getInt(1);
-            }
-            
-            String sql2 = "select * from pessoa_endereco inner join pessoa on pessoa.id = pessoa_endereco.id_pessoa inner join endereco on endereco.id = pessoa_endereco.id_endereco where id = " + id_pessoa_endereco+"";
-            ps = conn.prepareStatement(sql2);
-            ResultSet rs2 = ps.executeQuery();
-            
-            if (rs2.next()){
-                pessoa_endereco.setId(rs2.getInt(1));
-                pessoa_endereco.setId_pessoa(rs2.getInt(2));
-                pessoa_endereco.setId_endereco(rs2.getInt(3));
-                pessoa_endereco.setNome(rs2.getString(5));
-                pessoa_endereco.setCpf(rs2.getString(6));
-                pessoa_endereco.setRg(rs2.getString(7));
-                pessoa_endereco.setSexo(rs2.getString(8));
-                pessoa_endereco.setRua(rs2.getString(10));
-                pessoa_endereco.setCidade(rs2.getString(11));
-                pessoa_endereco.setCep(rs2.getString(12));
-                pessoa_endereco.setEstado(rs2.getString(13));
+            if (rs.next()){
+                pessoa.setId(rs.getInt(1));
+                pessoa.setNome(rs.getString(2));
+                pessoa.setCpf(rs.getString(3));
+                pessoa.setRg(rs.getString(4));
+                pessoa.setSexo(rs.getString(5));
+                pessoa.setRua(rs.getString(6));
+                pessoa.setCidade(rs.getString(7));
+                pessoa.setCep(rs.getString(8));
+                pessoa.setEstado(rs.getString(9));
             }
             
         } catch (SQLException e) {
@@ -169,76 +152,76 @@ public class ControlePessoaDao {
                 }
             }
         }
-        return pessoa_endereco;
+        return pessoa;
     }
     
-    public void relaciona(Pessoa pessoa, Endereco end) throws IOException {
-        Connection conn = null;
-        PreparedStatement ps = null;
-        int idEnd = 0, idPes = 0;
-        try {
-            conn = Conexao.getConnection();
-            String sql = "select * from pessoa where nome = '" + pessoa.getNome() + "'";
-            ps = conn.prepareStatement(sql);
-            ResultSet rs = ps.executeQuery();
-            if (rs.next()) {
-                idPes = rs.getInt(1);
-            }
-
-            String sql1 = "select * from endereco where cep = '" + end.getCep() + "'";
-            ps = conn.prepareStatement(sql1);
-            ResultSet rs1 = ps.executeQuery();
-            if (rs1.next()) {
-                idEnd = rs1.getInt(1);
-            }
-
-            String sql3 = "insert into pessoa_endereco (id_pessoa,id_endereco) values(?,?)";
-            ps = conn.prepareStatement(sql3);
-            ps.setInt(1, idPes);
-            ps.setInt(2, idEnd);
-            ps.execute();
-
-            conn.commit();
-        } catch (SQLException e) {
-            System.out.println("ERRO: " + e.getMessage());
-
-            if (conn != null) {
-                try {
-                    conn.rollback();
-                } catch (SQLException ex) {
-                    System.out.println("ERRO: " + ex.getMessage());
-                }
-            }
-
-        } finally {
-            if (ps != null) {
-                try {
-                    ps.close();
-                    GravarLogs.escrever("Dados inseridos com sucesso no banco de dados", "logs.txt");
-                } catch (SQLException ex) {
-                    System.out.println("ERRO: " + ex.getMessage());
-                }
-            }
-            if (conn != null) {
-                try {
-                    conn.close();
-                } catch (SQLException ex) {
-                    System.out.println("ERRO: " + ex.getMessage());
-                }
-            }
-        }
-    }
+//    public void relaciona(Pessoa pessoa, Endereco end) throws IOException {
+//        Connection conn = null;
+//        PreparedStatement ps = null;
+//        int idEnd = 0, idPes = 0;
+//        try {
+//            conn = Conexao.getConnection();
+//            String sql = "select * from pessoa where nome = '" + pessoa.getNome() + "'";
+//            ps = conn.prepareStatement(sql);
+//            ResultSet rs = ps.executeQuery();
+//            if (rs.next()) {
+//                idPes = rs.getInt(1);
+//            }
+//
+//            String sql1 = "select * from endereco where cep = '" + end.getCep() + "'";
+//            ps = conn.prepareStatement(sql1);
+//            ResultSet rs1 = ps.executeQuery();
+//            if (rs1.next()) {
+//                idEnd = rs1.getInt(1);
+//            }
+//
+//            String sql3 = "insert into pessoa_endereco (id_pessoa,id_endereco) values(?,?)";
+//            ps = conn.prepareStatement(sql3);
+//            ps.setInt(1, idPes);
+//            ps.setInt(2, idEnd);
+//            ps.execute();
+//
+//            conn.commit();
+//        } catch (SQLException e) {
+//            System.out.println("ERRO: " + e.getMessage());
+//
+//            if (conn != null) {
+//                try {
+//                    conn.rollback();
+//                } catch (SQLException ex) {
+//                    System.out.println("ERRO: " + ex.getMessage());
+//                }
+//            }
+//
+//        } finally {
+//            if (ps != null) {
+//                try {
+//                    ps.close();
+//                    GravarLogs.escrever("Dados inseridos com sucesso no banco de dados", "logs.txt");
+//                } catch (SQLException ex) {
+//                    System.out.println("ERRO: " + ex.getMessage());
+//                }
+//            }
+//            if (conn != null) {
+//                try {
+//                    conn.close();
+//                } catch (SQLException ex) {
+//                    System.out.println("ERRO: " + ex.getMessage());
+//                }
+//            }
+//        }
+//    }
 
     public void delete(Pessoa pessoa) {
         Connection conn = null;
         PreparedStatement ps = null;
         try {
             conn = Conexao.getConnection();
-            String sql = "delete from produtos where codigo = ?";
+            String sql = "delete from pessoas where id_pessoas = ?";
             ps = conn.prepareStatement(sql);
             ps.setInt(1, pessoa.getCodigo());
             ps.execute();
-
+            JOptionPane.showMessageDialog(null, "Excluido com sucesso");
             conn.commit();
         } catch (SQLException e) {
             System.out.println("ERRO: " + e.getMessage());

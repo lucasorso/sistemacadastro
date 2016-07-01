@@ -11,24 +11,28 @@ package sistemacadastro.arquivos;
  */
 public class Pessoa {
     
-    private int id;
+      private int id;
     private String nome;
     private String cpf;
     private String rg;
     private String sexo;
+    private String rua;
+    private String cidade;
+    private String cep;
+    private String estado;
     
     /**
      * @return the codigo
      */
     public int getCodigo(){
-        return id;
+        return getId();
     }
     
      /**
      * @param codigo the nome to set
      */
     public void setCodigo(int codigo){
-        this.id = codigo;
+        this.setId(codigo);
     }
 
     /**
@@ -96,6 +100,76 @@ public class Pessoa {
                 getRg() + " " +
                 getSexo();
                // super.toString(); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    /**
+     * @return the id
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    /**
+     * @return the rua
+     */
+    public String getRua() {
+        return rua;
+    }
+
+    /**
+     * @param rua the rua to set
+     */
+    public void setRua(String rua) {
+        this.rua = rua;
+    }
+
+    /**
+     * @return the cidade
+     */
+    public String getCidade() {
+        return cidade;
+    }
+
+    /**
+     * @param cidade the cidade to set
+     */
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
+    /**
+     * @return the cep
+     */
+    public String getCep() {
+        return cep;
+    }
+
+    /**
+     * @param cep the cep to set
+     */
+    public void setCep(String cep) {
+        this.cep = cep;
+    }
+
+    /**
+     * @return the estado
+     */
+    public String getEstado() {
+        return estado;
+    }
+
+    /**
+     * @param estado the estado to set
+     */
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
     
     

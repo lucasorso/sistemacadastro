@@ -293,7 +293,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="txtCepCliente" alignment="0" min="-2" pref="190" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="txtEstadoCliente" max="32767" attributes="0"/>
+                                  <Component id="JcomboBoxEstadoMedico" max="32767" attributes="0"/>
                                   <EmptySpace min="146" pref="146" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -323,7 +323,7 @@
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="txtEstadoCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="JcomboBoxEstadoMedico" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="57" max="32767" attributes="0"/>
@@ -353,17 +353,17 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txtCepCliente">
         </Component>
-        <Component class="javax.swing.JComboBox" name="txtEstadoCliente">
+        <Component class="javax.swing.JComboBox" name="JcomboBoxEstadoMedico">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="0"/>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtEstadoClienteActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JcomboBoxEstadoMedicoActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="txtEstadoCliente.addItem(&quot;AL&quot;);&#xa;txtEstadoCliente.addItem(&quot;AM&quot;);&#xa;txtEstadoCliente.addItem(&quot;BA&quot;);&#xa;txtEstadoCliente.addItem(&quot;CE&quot;);&#xa;txtEstadoCliente.addItem(&quot;DF&quot;);&#xa;txtEstadoCliente.addItem(&quot;ES&quot;);&#xa;txtEstadoCliente.addItem(&quot;GO&quot;);&#xa;txtEstadoCliente.addItem(&quot;MA&quot;);&#xa;txtEstadoCliente.addItem(&quot;MT&quot;);&#xa;txtEstadoCliente.addItem(&quot;MS&quot;);&#xa;txtEstadoCliente.addItem(&quot;MG&quot;);&#xa;txtEstadoCliente.addItem(&quot;PA&quot;);&#xa;txtEstadoCliente.addItem(&quot;PB&quot;);&#xa;txtEstadoCliente.addItem(&quot;PR&quot;);&#xa;txtEstadoCliente.addItem(&quot;PE&quot;);&#xa;txtEstadoCliente.addItem(&quot;PI&quot;);&#xa;txtEstadoCliente.addItem(&quot;RJ&quot;);&#xa;txtEstadoCliente.addItem(&quot;RN&quot;);&#xa;txtEstadoCliente.addItem(&quot;RS&quot;);&#xa;txtEstadoCliente.addItem(&quot;RO&quot;);&#xa;txtEstadoCliente.addItem(&quot;RR&quot;);&#xa;txtEstadoCliente.addItem(&quot;SC&quot;);&#xa;txtEstadoCliente.addItem(&quot;SP&quot;);&#xa;txtEstadoCliente.addItem(&quot;SE&quot;);&#xa;txtEstadoCliente.addItem(&quot;TO&quot;);"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="JcomboBoxEstadoMedico.addItem(&quot;AL&quot;);&#xa;JcomboBoxEstadoMedico.addItem(&quot;AM&quot;);&#xa;JcomboBoxEstadoMedico.addItem(&quot;BA&quot;);&#xa;JcomboBoxEstadoMedico.addItem(&quot;CE&quot;);&#xa;JcomboBoxEstadoMedico.addItem(&quot;DF&quot;);&#xa;JcomboBoxEstadoMedico.addItem(&quot;ES&quot;);&#xa;JcomboBoxEstadoMedico.addItem(&quot;GO&quot;);&#xa;JcomboBoxEstadoMedico.addItem(&quot;MA&quot;);&#xa;JcomboBoxEstadoMedico.addItem(&quot;MT&quot;);&#xa;JcomboBoxEstadoMedico.addItem(&quot;MS&quot;);&#xa;JcomboBoxEstadoMedico.addItem(&quot;MG&quot;);&#xa;JcomboBoxEstadoMedico.addItem(&quot;PA&quot;);&#xa;JcomboBoxEstadoMedico.addItem(&quot;PB&quot;);&#xa;JcomboBoxEstadoMedico.addItem(&quot;PR&quot;);&#xa;JcomboBoxEstadoMedico.addItem(&quot;PE&quot;);&#xa;JcomboBoxEstadoMedico.addItem(&quot;PI&quot;);&#xa;JcomboBoxEstadoMedico.addItem(&quot;RJ&quot;);&#xa;JcomboBoxEstadoMedico.addItem(&quot;RN&quot;);&#xa;JcomboBoxEstadoMedico.addItem(&quot;RS&quot;);&#xa;JcomboBoxEstadoMedico.addItem(&quot;RO&quot;);&#xa;JcomboBoxEstadoMedico.addItem(&quot;RR&quot;);&#xa;JcomboBoxEstadoMedico.addItem(&quot;SC&quot;);&#xa;JcomboBoxEstadoMedico.addItem(&quot;SP&quot;);&#xa;JcomboBoxEstadoMedico.addItem(&quot;SE&quot;);&#xa;JcomboBoxEstadoMedico.addItem(&quot;TO&quot;);"/>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>

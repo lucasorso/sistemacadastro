@@ -45,30 +45,25 @@ public class ListenerTelaInternaCadastroDePessoas implements ActionListener {
         if ("Salvar".equals(e.getActionCommand())) {
             try {
                 pessoa = cadP.setInformacoesPessoa();
-                endereco = cadP.setInformacoesEndereco();
-                if (pessoa == null && endereco == null) {
+                //endereco = cadP.setInformacoesEndereco();
+                if (pessoa == null ) {
                     GravarLogs.escrever("Campos obrigatótios não informados no cadastro", "Logs.txt");
                     JOptionPane.showMessageDialog(cadP, "É necessário preencher todos os campos !");
                 } else {
                     controlPes.insert(pessoa);
-                    controlEnd.insert(endereco);
-                    controlPes.relaciona(pessoa, endereco);
+                    //controlEnd.insert(endereco);
+                    //controlPes.relaciona(pessoa, endereco);
                     GravarLogs.escrever("Cadastrou novo usuario", "Logs.txt");
+                    JOptionPane.showMessageDialog(null, "Salvo com Sucesso!");
                 }
-            } catch (ExceptionArmazenarInformacoes ex) {
-                ex.getMessage();
             } catch (IOException ex) {
                 ex.getMessage();
             }
         }
         if ("Editar".equals(e.getActionCommand())) {
 
-            try {
-                pessoa = cadP.setInformacoesPessoa();
-                endereco = cadP.setInformacoesEndereco();
-            } catch (ExceptionArmazenarInformacoes ex) {
-                Logger.getLogger(ListenerTelaInternaCadastroDePessoas.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            pessoa = cadP.setInformacoesPessoa();
+           // endereco = cadP.setInformacoesEndereco();
 
             controlPes.update(pessoa);
 
@@ -81,11 +76,12 @@ public class ListenerTelaInternaCadastroDePessoas implements ActionListener {
         }
         if ("Excluir".equals(e.getActionCommand())) {
             try {
+                pessoa = cadP.setId();
+                controlPes.delete(pessoa);
                 GravarLogs.escrever("Excluiu Paciente ", "Logs.txt");
             } catch (IOException ex) {
                 Logger.getLogger(ListenerTelaInternaCadastroUsuario.class.getName()).log(Level.SEVERE, null, ex);
             }
-            cadP.dispose();
         }
 
         if ("Buscar".equals(e.getActionCommand())) {
@@ -98,6 +94,7 @@ public class ListenerTelaInternaCadastroDePessoas implements ActionListener {
                     GravarLogs.escrever("Buscou Paciente ", "Logs.txt");
                 } else {
                     cadP.getInfo(controlPes.buscaPessoa(cadP.txtNomeCliente.getText()));
+                    //JOptionPane.showMessageDialog(null, cadP.txtNomeCliente.getText());
                 }
 
             } catch (IOException ex) {

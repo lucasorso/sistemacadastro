@@ -24,6 +24,10 @@ public class TelaInternaCadastroMedico extends javax.swing.JInternalFrame {
         medico.setRG(txtRgMedico.getText());
         medico.setCRM(txtCRMMedico.getText());
         medico.setEmail(txtEmailMedico.getText());
+        medico.setRua(txtRuaCliente.getText());
+        medico.setCidade(txtCidadeCliente.getText());
+        medico.setCep(txtCepCliente.getText());
+        medico.setEstado(String.valueOf(JcomboBoxEstadoMedico.getSelectedItem()));
         medico.setEspecializacao(txtEspecializacaoMedico.getText());
         
         return medico;
@@ -56,7 +60,7 @@ public class TelaInternaCadastroMedico extends javax.swing.JInternalFrame {
         txtRuaCliente = new javax.swing.JTextField();
         txtCidadeCliente = new javax.swing.JTextField();
         txtCepCliente = new javax.swing.JTextField();
-        txtEstadoCliente = new javax.swing.JComboBox<>();
+        JcomboBoxEstadoMedico = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextAreaDados = new javax.swing.JTextArea();
@@ -184,34 +188,34 @@ public class TelaInternaCadastroMedico extends javax.swing.JInternalFrame {
 
         jLabel6.setText("CEP:");
 
-        txtEstadoCliente.addItem("AL");
-        txtEstadoCliente.addItem("AM");
-        txtEstadoCliente.addItem("BA");
-        txtEstadoCliente.addItem("CE");
-        txtEstadoCliente.addItem("DF");
-        txtEstadoCliente.addItem("ES");
-        txtEstadoCliente.addItem("GO");
-        txtEstadoCliente.addItem("MA");
-        txtEstadoCliente.addItem("MT");
-        txtEstadoCliente.addItem("MS");
-        txtEstadoCliente.addItem("MG");
-        txtEstadoCliente.addItem("PA");
-        txtEstadoCliente.addItem("PB");
-        txtEstadoCliente.addItem("PR");
-        txtEstadoCliente.addItem("PE");
-        txtEstadoCliente.addItem("PI");
-        txtEstadoCliente.addItem("RJ");
-        txtEstadoCliente.addItem("RN");
-        txtEstadoCliente.addItem("RS");
-        txtEstadoCliente.addItem("RO");
-        txtEstadoCliente.addItem("RR");
-        txtEstadoCliente.addItem("SC");
-        txtEstadoCliente.addItem("SP");
-        txtEstadoCliente.addItem("SE");
-        txtEstadoCliente.addItem("TO");
-        txtEstadoCliente.addActionListener(new java.awt.event.ActionListener() {
+        JcomboBoxEstadoMedico.addItem("AL");
+        JcomboBoxEstadoMedico.addItem("AM");
+        JcomboBoxEstadoMedico.addItem("BA");
+        JcomboBoxEstadoMedico.addItem("CE");
+        JcomboBoxEstadoMedico.addItem("DF");
+        JcomboBoxEstadoMedico.addItem("ES");
+        JcomboBoxEstadoMedico.addItem("GO");
+        JcomboBoxEstadoMedico.addItem("MA");
+        JcomboBoxEstadoMedico.addItem("MT");
+        JcomboBoxEstadoMedico.addItem("MS");
+        JcomboBoxEstadoMedico.addItem("MG");
+        JcomboBoxEstadoMedico.addItem("PA");
+        JcomboBoxEstadoMedico.addItem("PB");
+        JcomboBoxEstadoMedico.addItem("PR");
+        JcomboBoxEstadoMedico.addItem("PE");
+        JcomboBoxEstadoMedico.addItem("PI");
+        JcomboBoxEstadoMedico.addItem("RJ");
+        JcomboBoxEstadoMedico.addItem("RN");
+        JcomboBoxEstadoMedico.addItem("RS");
+        JcomboBoxEstadoMedico.addItem("RO");
+        JcomboBoxEstadoMedico.addItem("RR");
+        JcomboBoxEstadoMedico.addItem("SC");
+        JcomboBoxEstadoMedico.addItem("SP");
+        JcomboBoxEstadoMedico.addItem("SE");
+        JcomboBoxEstadoMedico.addItem("TO");
+        JcomboBoxEstadoMedico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtEstadoClienteActionPerformed(evt);
+                JcomboBoxEstadoMedicoActionPerformed(evt);
             }
         });
 
@@ -240,7 +244,7 @@ public class TelaInternaCadastroMedico extends javax.swing.JInternalFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtCepCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(txtEstadoCliente, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(JcomboBoxEstadoMedico, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(146, 146, 146)))))
                 .addGap(30, 30, 30))
         );
@@ -261,7 +265,7 @@ public class TelaInternaCadastroMedico extends javax.swing.JInternalFrame {
                     .addComponent(txtCepCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtEstadoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JcomboBoxEstadoMedico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
                 .addContainerGap(57, Short.MAX_VALUE))
         );
@@ -337,8 +341,8 @@ public class TelaInternaCadastroMedico extends javax.swing.JInternalFrame {
     private void txtRgMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRgMedicoActionPerformed
     }//GEN-LAST:event_txtRgMedicoActionPerformed
 
-    private void txtEstadoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEstadoClienteActionPerformed
-    }//GEN-LAST:event_txtEstadoClienteActionPerformed
+    private void JcomboBoxEstadoMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JcomboBoxEstadoMedicoActionPerformed
+    }//GEN-LAST:event_JcomboBoxEstadoMedicoActionPerformed
 
     private void txtCRMMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCRMMedicoActionPerformed
     }//GEN-LAST:event_txtCRMMedicoActionPerformed
@@ -349,6 +353,7 @@ public class TelaInternaCadastroMedico extends javax.swing.JInternalFrame {
     private void txtEmailMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailMedicoActionPerformed
     }//GEN-LAST:event_txtEmailMedicoActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> JcomboBoxEstadoMedico;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonEditar;
     private javax.swing.JButton jButtonExcluir;
@@ -375,7 +380,6 @@ public class TelaInternaCadastroMedico extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtCpfMedico;
     private javax.swing.JTextField txtEmailMedico;
     private javax.swing.JTextField txtEspecializacaoMedico;
-    private javax.swing.JComboBox<String> txtEstadoCliente;
     public javax.swing.JTextField txtNomeMedico;
     private javax.swing.JTextField txtRgMedico;
     private javax.swing.JTextField txtRuaCliente;
