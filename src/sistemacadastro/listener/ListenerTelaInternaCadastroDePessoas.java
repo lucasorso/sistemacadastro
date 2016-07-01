@@ -84,13 +84,13 @@ public class ListenerTelaInternaCadastroDePessoas implements ActionListener {
         if ("Buscar".equals(e.getActionCommand())) {
             try {
 
-                if ("".equals(cadP.txtNomeCliente.getText())  ||  cadP.txtNomeCliente.getText() == null) {
+                if ("".equals(cadP.jTextFieldBucar.getText())  ||  cadP.jTextFieldBucar.getText() == null) {
                     List<Pessoa> listaPessoas = new ArrayList<Pessoa>();
                     listaPessoas = controlPes.getAll();
                     cadP.getLista(listaPessoas);
                     GravarLogs.escrever("Buscou Paciente ", "Logs.txt");
                 } else {
-                    cadP.getInfo(controlPes.buscaPessoa(cadP.txtNomeCliente.getText()));
+                    cadP.getInfo(controlPes.buscaPessoa(cadP.jTextFieldBucar.getText()));
                     //JOptionPane.showMessageDialog(null, cadP.txtNomeCliente.getText());
                 }
 

@@ -390,3 +390,114 @@ Thu Jun 30 23:34:58 BRT 2016 : Novo login Yuri
 Thu Jun 30 23:35:27 BRT 2016 : Editou Paciente 
 Thu Jun 30 23:36:57 BRT 2016 : Novo login Yuri
 Thu Jun 30 23:37:27 BRT 2016 : Editou Paciente 
+Fri Jul 01 14:35:44 BRT 2016 : Novo login Yuri
+Fri Jul 01 14:44:09 BRT 2016 : Novo login Yuri
+Fri Jul 01 14:44:36 BRT 2016 : Buscou Medico 
+Fri Jul 01 14:46:45 BRT 2016 : Novo login Yuri
+Fri Jul 01 14:51:48 BRT 2016 : Novo login Yuri
+Fri Jul 01 14:52:57 BRT 2016 : Novo login Yuri
+Fri Jul 01 14:53:46 BRT 2016 : Novo login Yuri
+Fri Jul 01 14:54:17 BRT 2016 : Novo login Yuri
+Fri Jul 01 14:55:43 BRT 2016 : Cadastrou Medico 
+Fri Jul 01 14:55:54 BRT 2016 : Buscou Medico 
+Fri Jul 01 14:58:21 BRT 2016 : Novo login Yuri
+Fri Jul 01 14:58:29 BRT 2016 : Buscou Medico 
+Fri Jul 01 14:58:37 BRT 2016 : Excluiu Medico 
+Fri Jul 01 15:08:18 BRT 2016 : Novo login Yuri
+Fri Jul 01 15:08:59 BRT 2016 : Cadastrou Medico 
+Fri Jul 01 15:09:18 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:09:19 BRT 2016 : Buscou Paciente 
+Fri Jul 01 15:16:38 BRT 2016 : Novo login Yuri
+Fri Jul 01 15:17:02 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:17:02 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:17:03 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:17:03 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:17:34 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:17:34 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:17:34 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:17:34 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:17:34 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:17:34 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:18:32 BRT 2016 : Novo login Yuri
+Fri Jul 01 15:18:45 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:18:46 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:18:46 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:18:46 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:18:51 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:18:52 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:18:52 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:18:52 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:20:00 BRT 2016 : Novo login Yuri
+Fri Jul 01 15:20:10 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:20:12 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:20:12 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:20:12 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:20:12 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:20:13 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:20:13 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:20:13 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:20:22 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:21:18 BRT 2016 : Novo login Yuri
+Fri Jul 01 15:21:26 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:21:30 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:21:42 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:21:43 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:21:43 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:21:50 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:21:51 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:23:30 BRT 2016 : Novo login Yuri
+Fri Jul 01 15:23:42 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:24:22 BRT 2016 : Novo login Yuri
+Fri Jul 01 15:24:30 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:24:31 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:24:31 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:26:00 BRT 2016 : Novo login Yuri
+Fri Jul 01 15:26:11 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:26:51 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:26:51 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:26:51 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:26:52 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:26:52 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:26:52 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:27:42 BRT 2016 : Novo login Yuri
+Fri Jul 01 15:27:53 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:29:02 BRT 2016 : Novo login Yuri
+Fri Jul 01 15:34:29 BRT 2016 : Novo login Yuri
+Fri Jul 01 15:34:42 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:34:52 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:34:59 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:35:06 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:36:39 BRT 2016 : Cadastrou Medico 
+Fri Jul 01 15:36:48 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:37:55 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:38:36 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:38:53 BRT 2016 : Cadastrou Medico 
+Fri Jul 01 15:39:49 BRT 2016 : Buscou Medico 
+Fri Jul 01 15:43:45 BRT 2016 : Novo login Yuri
+Fri Jul 01 15:43:51 BRT 2016 : Buscou Paciente 
+Fri Jul 01 15:46:15 BRT 2016 : Novo login Yuri
+Fri Jul 01 15:46:20 BRT 2016 : Buscou Paciente 
+Fri Jul 01 15:47:35 BRT 2016 : Novo login Yuri
+Fri Jul 01 15:47:38 BRT 2016 : Buscou Paciente 
+Fri Jul 01 15:48:27 BRT 2016 : Novo login Yuri
+Fri Jul 01 15:48:30 BRT 2016 : Buscou Paciente 
+Fri Jul 01 15:48:46 BRT 2016 : Novo login Yuri
+Fri Jul 01 15:48:49 BRT 2016 : Buscou Paciente 
+Fri Jul 01 15:57:17 BRT 2016 : Novo login Yuri
+Fri Jul 01 15:57:21 BRT 2016 : Buscou Paciente 
+Fri Jul 01 16:01:30 BRT 2016 : Novo login Yuri
+Fri Jul 01 16:01:34 BRT 2016 : Buscou Paciente 
+Fri Jul 01 16:01:46 BRT 2016 : Buscou Paciente 
+Fri Jul 01 16:01:54 BRT 2016 : Buscou Paciente 
+Fri Jul 01 16:38:59 BRT 2016 : Novo login Yuri
+Fri Jul 01 16:40:03 BRT 2016 : Novo login Yuri
+Fri Jul 01 16:41:54 BRT 2016 : Novo login Yuri
+Fri Jul 01 16:42:01 BRT 2016 : Buscou Paciente 
+Fri Jul 01 16:42:49 BRT 2016 : Novo login Yuri
+Fri Jul 01 16:42:57 BRT 2016 : Buscou Paciente 
+Fri Jul 01 17:02:10 BRT 2016 : Novo login Yuri
+Fri Jul 01 17:02:16 BRT 2016 : Buscou Paciente 
+Fri Jul 01 17:03:34 BRT 2016 : Novo login Yuri
+Fri Jul 01 17:03:42 BRT 2016 : Buscou Paciente 
+Fri Jul 01 17:04:51 BRT 2016 : Novo login Yuri
+Fri Jul 01 17:04:58 BRT 2016 : Buscou Paciente 

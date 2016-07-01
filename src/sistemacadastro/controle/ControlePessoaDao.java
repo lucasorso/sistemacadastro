@@ -74,7 +74,7 @@ public class ControlePessoaDao {
         PreparedStatement ps = null;
         try {
             conn = Conexao.getConnection();
-            String sql = "select * from pessoa";
+            String sql = "select * from pessoas";
             ps = conn.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {

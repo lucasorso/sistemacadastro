@@ -94,10 +94,10 @@ public class Pessoa {
     @Override
     public String toString() {
         return 
-                getCodigo() + " " +
-                getNome() + " " +
-                getCpf() + " " +
-                getRg() + " " +
+                getCodigo() + "  ||  "+
+                getNome() + "  ||  " +
+                getCpf() + "  ||  " +
+                getRg() + "  ||  " +
                 getSexo();
                // super.toString(); //To change body of generated methods, choose Tools | Templates.
     }

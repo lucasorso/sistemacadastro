@@ -177,5 +177,16 @@ public class Medico {
         this.estado = estado;
     }
     
+    @Override
+    public String toString() {
+        return 
+                getId()+ "  ||  "+
+                getNome() + "  ||  " +
+                getCpf() + "  ||  " +
+                getRG();
+               
+               // super.toString(); //To change body of generated methods, choose Tools | Templates.
+    }
+    
     
 }

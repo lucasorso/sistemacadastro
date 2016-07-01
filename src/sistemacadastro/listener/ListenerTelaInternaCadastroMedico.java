@@ -8,9 +8,12 @@ package sistemacadastro.listener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import sistemacadastro.arquivos.Medico;
+import sistemacadastro.arquivos.Pessoa;
 import sistemacadastro.controle.ControleMedicoDao;
 import sistemacadastro.filestream.GravarLogs;
 import sistemacadastro.visao.TelaInternaCadastroMedico;
@@ -57,8 +60,24 @@ public class ListenerTelaInternaCadastroMedico implements ActionListener{
             }
             cadM.dispose();
         }
-        if ("Buscar".equals(e.getActionCommand())) {
-            //cadM.getInfo(control.buscaMedico(cadM.getText()));
+        if ("Buscar".equals(e.getActionCommand())) {    
+            try {
+                 if ("".equals(cadM.jTextFieldBuscar.getText())  ||  cadM.jTextFieldBuscar.getText() == null) {
+                    List<Pessoa> listaPessoas = new ArrayList<Pessoa>();
+                    listaPessoas = control.getAll();
+                    cadM.getLista(listaPessoas);
+                    GravarLogs.escrever("Buscou Paciente ", "Logs.txt");
+                } else {
+                   cadM.getInfo(control.buscaMedico(cadM.jTextFieldBuscar.getText()));
+                    //JOptionPane.showMessageDialog(null, cadP.txtNomeCliente.getText());
+                }
+            } catch (IOException ex) {
+                Logger.getLogger(ListenerTelaInternaCadastroUsuario.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+        if ("Novo".equals(e.getActionCommand())) {
+            cadM.limparCampos();
             try {
                 GravarLogs.escrever("Buscou Medico ", "Logs.txt");
             } catch (IOException ex) {

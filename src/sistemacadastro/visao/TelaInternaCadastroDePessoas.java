@@ -43,14 +43,14 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame {
         }
     }
     
-     public void getLista(java.util.List<Pessoa> listaPessoas) {
+    public void getLista(java.util.List<Pessoa> listaPessoas) {
         jTextAreaDados.append("Código  |   Nome      |      CPF     |     RG    |     Sexo      \n");
          for (int i = 0; i < listaPessoas.size(); i++){
             jTextAreaDados.append(listaPessoas.get(i).toString() + "\n");
         }
     }
      
-     public void getInfo(Pessoa p_e){
+    public void getInfo(Pessoa p_e){
          jTextFieldCod.setText(String.valueOf(p_e.getId()));
          txtNomeCliente.setText(p_e.getNome());
          jFormattedTextFieldCpf.setText(p_e.getCpf());
@@ -494,10 +494,10 @@ public class TelaInternaCadastroDePessoas extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextAreaDados;
-    private javax.swing.JTextField jTextFieldBucar;
+    public javax.swing.JTextField jTextFieldBucar;
     private javax.swing.JTextField jTextFieldCidade00;
     private javax.swing.JTextField jTextFieldCod;
     private javax.swing.JTextField jTextFieldRua00;
-    public javax.swing.JTextField txtNomeCliente;
+    private javax.swing.JTextField txtNomeCliente;
     // End of variables declaration//GEN-END:variables
 }
