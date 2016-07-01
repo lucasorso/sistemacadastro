@@ -288,6 +288,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         jMenu1.add(cadastrarMedico_MenuItem);
 
+        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemacadastro/icones/table_multiple.png"))); // NOI18N
         jMenuItem2.setText("Consulta");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
